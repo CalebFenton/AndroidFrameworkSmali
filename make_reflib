@@ -1,0 +1,26 @@
+#!/bin/bash
+mkdir reflib
+cd reflib
+
+echo -n "[*] Android SDK version is ... "
+REFLIB_SDK_VERSION=$(echo $(adb shell getprop ro.build.version.sdk) | sed -e 's/[[:space:]]*$//')
+echo $REFLIB_SDK_VERSION
+REFLIB_PATH="android-$REFLIB_SDK_VERSION"
+
+echo "[*] Pulling framework ..."
+adb pull /system/framework
+
+mkdir $REFLIB_PATH
+for i in *.odex; do
+    echo "[*] Disassembling $i ..."
+    baksmali --code-offsets --use-locals --sequential-labels --register-info ALL --deodex --bootclasspath-dir . $i
+done
+
+echo "[*] Moving Smali to $REFLIB_PATH ..."
+mv out/* $REFLIB_PATH
+rm -r out/
+
+echo "[*] Finished."
+
+# Ooo, get you some directory file counts, ooo!
+# for x in `find . -maxdepth 1 -type d | sort`; do y=`find $x | wc -l`; echo $x,$y; done
