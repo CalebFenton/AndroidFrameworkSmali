@@ -1,4 +1,4 @@
-.class final Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;
+.class final Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;
 .super Ljava/lang/Object;
 .source "GoogleLoginCredentialsResult.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+    value = Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;",
+        "Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;",
         ">;"
     }
 .end annotation
@@ -42,20 +42,20 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
     .locals 2
     .param p1, "in"    # Landroid/os/Parcel;
 
     #@0
     .prologue
     .line 129
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+    new-instance v0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 
     #@2
     const/4 v1, 0x0
 
     #@3
-    invoke-direct {v0, p1, v1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;-><init>(Landroid/os/Parcel;Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;)V
+    invoke-direct {v0, p1, v1}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;-><init>(Landroid/os/Parcel;Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;)V
 
     #@6
     return-object v0
@@ -68,7 +68,7 @@
     #@0
     .prologue
     .line 128
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;->createFromParcel(Landroid/os/Parcel;)Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;->createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 
     #@3
     move-result-object v0
@@ -77,14 +77,14 @@
     return-object v0
 .end method
 
-.method public newArray(I)[Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+.method public newArray(I)[Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
     .locals 1
     .param p1, "size"    # I
 
     #@0
     .prologue
     .line 133
-    new-array v0, p1, [Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+    new-array v0, p1, [Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 
     #@2
     return-object v0
@@ -97,7 +97,7 @@
     #@0
     .prologue
     .line 132
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;->newArray(I)[Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;->newArray(I)[Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 
     #@3
     move-result-object v0

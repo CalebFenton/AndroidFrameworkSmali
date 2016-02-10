@@ -1,4 +1,4 @@
-.class public Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+.class public Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 .super Ljava/lang/Object;
 .source "GroupChatInvitation.java"
 
@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;
+        Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;
     }
 .end annotation
 
@@ -20,7 +20,7 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;",
+            "Landroid/com/google/android/gtalkservice/GroupChatInvitation;",
             ">;"
         }
     .end annotation
@@ -46,14 +46,14 @@
     #@0
     .prologue
     .line 79
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;
+    new-instance v0, Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;-><init>()V
 
     #@5
     .line 78
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@7
     .line 23
@@ -77,7 +77,7 @@
     move-result-object v0
 
     #@7
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mRoomAddress:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mRoomAddress:Ljava/lang/String;
 
     #@9
     .line 40
@@ -87,7 +87,7 @@
     move-result-object v0
 
     #@d
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mInviter:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mInviter:Ljava/lang/String;
 
     #@f
     .line 41
@@ -97,7 +97,7 @@
     move-result-object v0
 
     #@13
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mReason:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mReason:Ljava/lang/String;
 
     #@15
     .line 42
@@ -107,7 +107,7 @@
     move-result-object v0
 
     #@19
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mPassword:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mPassword:Ljava/lang/String;
 
     #@1b
     .line 43
@@ -117,7 +117,7 @@
     move-result-wide v0
 
     #@1f
-    iput-wide v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mGroupContactId:J
+    iput-wide v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mGroupContactId:J
 
     #@21
     .line 38
@@ -146,35 +146,35 @@
     #@0
     .prologue
     .line 67
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mRoomAddress:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mRoomAddress:Ljava/lang/String;
 
     #@2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@5
     .line 68
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mInviter:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mInviter:Ljava/lang/String;
 
     #@7
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@a
     .line 69
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mReason:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mReason:Ljava/lang/String;
 
     #@c
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@f
     .line 70
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mPassword:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mPassword:Ljava/lang/String;
 
     #@11
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@14
     .line 71
-    iget-wide v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;->mGroupContactId:J
+    iget-wide v0, p0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;->mGroupContactId:J
 
     #@16
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V

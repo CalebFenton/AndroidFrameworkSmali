@@ -40,7 +40,7 @@
 
 .field private mHorizPan:Lcom/google/android/maps/MapController$HorizPanState;
 
-.field private final mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+.field private final mMap:Landroid/com/google/googlenav/map/Map;
 
 .field private mMapView:Lcom/google/android/maps/MapView;
 
@@ -48,7 +48,7 @@
 
 .field private mPanAnimation:Landroid/view/animation/Animation;
 
-.field private mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+.field private mPanPoint:Landroid/com/google/map/MapPoint;
 
 .field private mVertPan:Lcom/google/android/maps/MapController$VertPanState;
 
@@ -303,9 +303,9 @@
     return-void
 .end method
 
-.method constructor <init>(Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;Lcom/google/android/maps/MapView;)V
+.method constructor <init>(Landroid/com/google/googlenav/map/Map;Lcom/google/android/maps/MapView;)V
     .locals 5
-    .param p1, "map"    # Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    .param p1, "map"    # Landroid/com/google/googlenav/map/Map;
     .param p2, "mapView"    # Lcom/google/android/maps/MapView;
 
     #@0
@@ -376,7 +376,7 @@
 
     #@23
     .line 52
-    iput-object v1, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object v1, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@25
     .line 54
@@ -404,7 +404,7 @@
 
     #@31
     .line 76
-    iput-object p1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iput-object p1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@33
     .line 77
@@ -446,50 +446,50 @@
 
     #@8
     .line 232
-    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@b
     move-result-object v4
 
     #@c
     .line 233
-    .local v4, "mapPoint":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .local v4, "mapPoint":Landroid/com/google/map/MapPoint;
     invoke-virtual {p0, v10}, Lcom/google/android/maps/MapController;->stopAnimation(Z)V
 
     #@f
     .line 234
-    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@11
-    invoke-virtual {v5, v4}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->preLoad(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-virtual {v5, v4}, Landroid/com/google/googlenav/map/Map;->preLoad(Landroid/com/google/map/MapPoint;)V
 
     #@14
     .line 235
-    iput-object v4, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object v4, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@16
     .line 236
-    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@18
-    invoke-virtual {v5}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getCenterPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v5}, Landroid/com/google/googlenav/map/Map;->getCenterPoint()Landroid/com/google/map/MapPoint;
 
     #@1b
     move-result-object v1
 
     #@1c
     .line 238
-    .local v1, "center":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
-    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    .local v1, "center":Landroid/com/google/map/MapPoint;
+    iget-object v5, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@1e
-    invoke-virtual {v5}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v5}, Landroid/com/google/googlenav/map/Map;->getZoom()Landroid/com/google/map/Zoom;
 
     #@21
     move-result-object v5
 
     #@22
-    invoke-virtual {v4, v1, v5}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->pixelDistanceSquared(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;Landroid_maps_conflict_avoidance/com/google/map/Zoom;)J
+    invoke-virtual {v4, v1, v5}, Landroid/com/google/map/MapPoint;->pixelDistanceSquared(Landroid/com/google/map/MapPoint;Landroid/com/google/map/Zoom;)J
 
     #@25
     move-result-wide v6
@@ -540,7 +540,7 @@
 
     #@3b
     .line 241
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLatitude()I
+    invoke-virtual {v1}, Landroid/com/google/map/MapPoint;->getLatitude()I
 
     #@3e
     move-result v6
@@ -552,7 +552,7 @@
     div-float/2addr v6, v11
 
     #@41
-    invoke-virtual {v4}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLatitude()I
+    invoke-virtual {v4}, Landroid/com/google/map/MapPoint;->getLatitude()I
 
     #@44
     move-result v7
@@ -565,7 +565,7 @@
 
     #@47
     .line 242
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLongitude()I
+    invoke-virtual {v1}, Landroid/com/google/map/MapPoint;->getLongitude()I
 
     #@4a
     move-result v8
@@ -577,7 +577,7 @@
     div-float/2addr v8, v11
 
     #@4d
-    invoke-virtual {v4}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLongitude()I
+    invoke-virtual {v4}, Landroid/com/google/map/MapPoint;->getLongitude()I
 
     #@50
     move-result v9
@@ -641,17 +641,17 @@
     return-void
 .end method
 
-.method private centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+.method private centerMapToInternal(Landroid/com/google/map/MapPoint;)V
     .locals 1
-    .param p1, "mapPoint"    # Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .param p1, "mapPoint"    # Landroid/com/google/map/MapPoint;
 
     #@0
     .prologue
     .line 352
-    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@2
-    invoke-virtual {v0, p1}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->setCenterPoint(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-virtual {v0, p1}, Landroid/com/google/googlenav/map/Map;->setCenterPoint(Landroid/com/google/map/MapPoint;)V
 
     #@5
     .line 353
@@ -1390,35 +1390,35 @@
 
     #@4
     .line 304
-    iget-object v1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@6
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getCenterPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v1}, Landroid/com/google/googlenav/map/Map;->getCenterPoint()Landroid/com/google/map/MapPoint;
 
     #@9
     move-result-object v1
 
     #@a
     .line 305
-    iget-object v2, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v2, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@c
-    invoke-virtual {v2}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v2}, Landroid/com/google/googlenav/map/Map;->getZoom()Landroid/com/google/map/Zoom;
 
     #@f
     move-result-object v2
 
     #@10
     .line 304
-    invoke-virtual {v1, p1, p2, v2}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->pixelOffset(IILandroid_maps_conflict_avoidance/com/google/map/Zoom;)Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v1, p1, p2, v2}, Landroid/com/google/map/MapPoint;->pixelOffset(IILandroid/com/google/map/Zoom;)Landroid/com/google/map/MapPoint;
 
     #@13
     move-result-object v0
 
     #@14
     .line 306
-    .local v0, "newCenter":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
-    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    .local v0, "newCenter":Landroid/com/google/map/MapPoint;
+    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid/com/google/map/MapPoint;)V
 
     #@17
     .line 301
@@ -1492,13 +1492,13 @@
     #@0
     .prologue
     .line 345
-    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@3
     move-result-object v0
 
     #@4
-    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid/com/google/map/MapPoint;)V
 
     #@7
     .line 344
@@ -1531,13 +1531,13 @@
 
     #@b
     .line 395
-    invoke-static {p1}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoom(I)Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-static {p1}, Landroid/com/google/map/Zoom;->getZoom(I)Landroid/com/google/map/Zoom;
 
     #@e
     move-result-object v0
 
     #@f
-    invoke-virtual {p0, v0}, Lcom/google/android/maps/MapController;->zoomTo(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/maps/MapController;->zoomTo(Landroid/com/google/map/Zoom;)V
 
     #@12
     .line 396
@@ -1659,7 +1659,7 @@
 
     #@3f
     .line 275
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    new-instance v0, Landroid/com/google/map/MapPoint;
 
     #@41
     .line 276
@@ -1694,12 +1694,12 @@
 
     #@4f
     .line 275
-    invoke-direct {v0, v3, v4}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;-><init>(II)V
+    invoke-direct {v0, v3, v4}, Landroid/com/google/map/MapPoint;-><init>(II)V
 
     #@52
     .line 277
-    .local v0, "newCenter":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
-    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    .local v0, "newCenter":Landroid/com/google/map/MapPoint;
+    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid/com/google/map/MapPoint;)V
 
     #@55
     .line 278
@@ -1707,16 +1707,16 @@
 
     #@56
     .line 280
-    .end local v0    # "newCenter":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .end local v0    # "newCenter":Landroid/com/google/map/MapPoint;
     :cond_2
-    iget-object v3, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v3, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@58
-    invoke-direct {p0, v3}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-direct {p0, v3}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid/com/google/map/MapPoint;)V
 
     #@5b
     .line 281
-    iput-object v6, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object v6, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@5d
     .line 282
@@ -1795,7 +1795,7 @@
 
     #@7
     .line 367
-    iget-object v1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v1, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@9
     monitor-enter v1
@@ -1803,10 +1803,10 @@
     #@a
     .line 368
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v0, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@c
-    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-direct {p0, v0}, Lcom/google/android/maps/MapController;->centerMapToInternal(Landroid/com/google/map/MapPoint;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1820,7 +1820,7 @@
 
     #@12
     .line 372
-    iput-object v2, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object v2, p0, Lcom/google/android/maps/MapController;->mPanPoint:Landroid/com/google/map/MapPoint;
 
     #@14
     .line 374
@@ -1954,17 +1954,17 @@
     return v0
 .end method
 
-.method zoomTo(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)V
+.method zoomTo(Landroid/com/google/map/Zoom;)V
     .locals 1
-    .param p1, "zoom"    # Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .param p1, "zoom"    # Landroid/com/google/map/Zoom;
 
     #@0
     .prologue
     .line 378
-    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@2
-    invoke-virtual {v0, p1}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->setZoom(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)V
+    invoke-virtual {v0, p1}, Landroid/com/google/googlenav/map/Map;->setZoom(Landroid/com/google/map/Zoom;)V
 
     #@5
     .line 379
@@ -1990,10 +1990,10 @@
 
     #@4
     .line 410
-    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v0, p0, Lcom/google/android/maps/MapController;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@6
-    invoke-virtual {v0, p1, p2}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->zoomToSpan(II)V
+    invoke-virtual {v0, p1, p2}, Landroid/com/google/googlenav/map/Map;->zoomToSpan(II)V
 
     #@9
     .line 411

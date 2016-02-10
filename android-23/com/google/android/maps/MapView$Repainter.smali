@@ -3,7 +3,7 @@
 .source "MapView.java"
 
 # interfaces
-.implements Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestListener;
+.implements Landroid/com/google/googlenav/datarequest/DataRequestListener;
 
 
 # annotations
@@ -42,14 +42,14 @@
 
 
 # virtual methods
-.method public onComplete(Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequest;)V
+.method public onComplete(Landroid/com/google/googlenav/datarequest/DataRequest;)V
     .locals 1
-    .param p1, "dataRequest"    # Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequest;
+    .param p1, "dataRequest"    # Landroid/com/google/googlenav/datarequest/DataRequest;
 
     #@0
     .prologue
     .line 444
-    invoke-interface {p1}, Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequest;->isImmediate()Z
+    invoke-interface {p1}, Landroid/com/google/googlenav/datarequest/DataRequest;->isImmediate()Z
 
     #@3
     move-result v0

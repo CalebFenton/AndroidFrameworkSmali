@@ -9,19 +9,19 @@
 # instance fields
 .field private final mInverse:Landroid/graphics/Matrix;
 
-.field private final mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+.field private final mMap:Landroid/com/google/googlenav/map/Map;
 
 .field private final mMatrix:Landroid/graphics/Matrix;
 
 .field private final mTempFloats:[F
 
-.field private final mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+.field private final mTempPoint:Landroid/com/google/common/geom/Point;
 
 
 # direct methods
-.method constructor <init>(Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;)V
+.method constructor <init>(Landroid/com/google/googlenav/map/Map;)V
     .locals 1
-    .param p1, "map"    # Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    .param p1, "map"    # Landroid/com/google/googlenav/map/Map;
 
     #@0
     .prologue
@@ -60,18 +60,18 @@
 
     #@16
     .line 39
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    new-instance v0, Landroid/com/google/common/geom/Point;
 
     #@18
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/common/geom/Point;-><init>()V
 
     #@1b
     .line 38
-    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@1d
     .line 42
-    iput-object p1, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iput-object p1, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@1f
     .line 43
@@ -133,21 +133,21 @@
 
     #@16
     .line 39
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    new-instance v0, Landroid/com/google/common/geom/Point;
 
     #@18
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/common/geom/Point;-><init>()V
 
     #@1b
     .line 38
-    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@1d
     .line 48
-    iget-object v0, p1, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v0, p1, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@1f
-    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iput-object v0, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@21
     .line 47
@@ -169,10 +169,10 @@
     iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempFloats:[F
 
     #@4
-    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@6
-    iget v1, v1, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    iget v1, v1, Landroid/com/google/common/geom/Point;->x:I
 
     #@8
     int-to-float v1, v1
@@ -185,10 +185,10 @@
     iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempFloats:[F
 
     #@d
-    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@f
-    iget v1, v1, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iget v1, v1, Landroid/com/google/common/geom/Point;->y:I
 
     #@11
     int-to-float v1, v1
@@ -208,7 +208,7 @@
 
     #@1b
     .line 121
-    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@1d
     iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempFloats:[F
@@ -220,11 +220,11 @@
     float-to-int v1, v1
 
     #@22
-    iput v1, v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    iput v1, v0, Landroid/com/google/common/geom/Point;->x:I
 
     #@24
     .line 122
-    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@26
     iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempFloats:[F
@@ -236,7 +236,7 @@
     float-to-int v1, v1
 
     #@2b
-    iput v1, v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iput v1, v0, Landroid/com/google/common/geom/Point;->y:I
 
     #@2d
     .line 117
@@ -253,7 +253,7 @@
     #@0
     .prologue
     .line 84
-    iget-object v7, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v7, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@2
     monitor-enter v7
@@ -328,29 +328,29 @@
 
     #@23
     .line 91
-    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@25
-    invoke-virtual {v6}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getCenterPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v6}, Landroid/com/google/googlenav/map/Map;->getCenterPoint()Landroid/com/google/map/MapPoint;
 
     #@28
     move-result-object v0
 
     #@29
     .line 92
-    .local v0, "centerPoint":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
-    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    .local v0, "centerPoint":Landroid/com/google/map/MapPoint;
+    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@2b
-    invoke-virtual {v6, v0}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getPointXY(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    invoke-virtual {v6, v0}, Landroid/com/google/googlenav/map/Map;->getPointXY(Landroid/com/google/map/MapPoint;)Landroid/com/google/common/geom/Point;
 
     #@2e
     move-result-object v1
 
     #@2f
     .line 93
-    .local v1, "centerXY":Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
-    iget v6, v1, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    .local v1, "centerXY":Landroid/com/google/common/geom/Point;
+    iget v6, v1, Landroid/com/google/common/geom/Point;->x:I
 
     #@31
     sub-int v2, p1, v6
@@ -358,7 +358,7 @@
     #@33
     .line 94
     .local v2, "dx":I
-    iget v6, v1, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iget v6, v1, Landroid/com/google/common/geom/Point;->y:I
 
     #@35
     sub-int v3, p2, v6
@@ -366,27 +366,27 @@
     #@37
     .line 95
     .local v3, "dy":I
-    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v6, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@39
-    invoke-virtual {v6}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v6}, Landroid/com/google/googlenav/map/Map;->getZoom()Landroid/com/google/map/Zoom;
 
     #@3c
     move-result-object v6
 
     #@3d
-    invoke-virtual {v0, v2, v3, v6}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->pixelOffset(IILandroid_maps_conflict_avoidance/com/google/map/Zoom;)Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v0, v2, v3, v6}, Landroid/com/google/map/MapPoint;->pixelOffset(IILandroid/com/google/map/Zoom;)Landroid/com/google/map/MapPoint;
 
     #@40
     move-result-object v5
 
     #@41
     .line 96
-    .local v5, "tapPoint":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .local v5, "tapPoint":Landroid/com/google/map/MapPoint;
     new-instance v4, Lcom/google/android/maps/GeoPoint;
 
     #@43
-    invoke-direct {v4, v5}, Lcom/google/android/maps/GeoPoint;-><init>(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+    invoke-direct {v4, v5}, Lcom/google/android/maps/GeoPoint;-><init>(Landroid/com/google/map/MapPoint;)V
 
     #@46
     .line 97
@@ -395,12 +395,12 @@
 
     #@47
     .line 84
-    .end local v0    # "centerPoint":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
-    .end local v1    # "centerXY":Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    .end local v0    # "centerPoint":Landroid/com/google/map/MapPoint;
+    .end local v1    # "centerXY":Landroid/com/google/common/geom/Point;
     .end local v2    # "dx":I
     .end local v3    # "dy":I
     .end local v4    # "point":Lcom/google/android/maps/GeoPoint;
-    .end local v5    # "tapPoint":Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .end local v5    # "tapPoint":Landroid/com/google/map/MapPoint;
     :catchall_0
     move-exception v6
 
@@ -433,10 +433,10 @@
     iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mMatrix:Landroid/graphics/Matrix;
 
     #@2
-    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@4
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v1}, Landroid/com/google/googlenav/map/Map;->getZoom()Landroid/com/google/map/Zoom;
 
     #@7
     move-result-object v1
@@ -445,7 +445,7 @@
     float-to-int v2, p1
 
     #@9
-    invoke-virtual {v1, v2}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getPixelsForDistance(I)I
+    invoke-virtual {v1, v2}, Landroid/com/google/map/Zoom;->getPixelsForDistance(I)I
 
     #@c
     move-result v1
@@ -534,7 +534,7 @@
 
     #@5
     .line 144
-    iget-object v3, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v3, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@7
     monitor-enter v3
@@ -542,29 +542,29 @@
     #@8
     .line 145
     :try_start_0
-    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@a
-    invoke-virtual {p3}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {p3}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@d
     move-result-object v4
 
     #@e
-    iget-object v5, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v5, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@10
-    invoke-virtual {v2, v4, v5}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getPointXY(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;Landroid_maps_conflict_avoidance/com/google/common/geom/Point;)V
+    invoke-virtual {v2, v4, v5}, Landroid/com/google/googlenav/map/Map;->getPointXY(Landroid/com/google/map/MapPoint;Landroid/com/google/common/geom/Point;)V
 
     #@13
     .line 146
     iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mMatrix:Landroid/graphics/Matrix;
 
     #@15
-    iget-object v4, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v4, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@17
-    iget v4, v4, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    iget v4, v4, Landroid/com/google/common/geom/Point;->x:I
 
     #@19
     neg-int v4, v4
@@ -573,10 +573,10 @@
     int-to-float v4, v4
 
     #@1b
-    iget-object v5, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v5, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@1d
-    iget v5, v5, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iget v5, v5, Landroid/com/google/common/geom/Point;->y:I
 
     #@1f
     neg-int v5, v5
@@ -603,10 +603,10 @@
 
     #@2e
     .line 149
-    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@30
-    iget v2, v2, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    iget v2, v2, Landroid/com/google/common/geom/Point;->x:I
 
     #@32
     int-to-float v2, v2
@@ -617,10 +617,10 @@
     #@35
     .line 150
     .local v0, "correctionX":F
-    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v2, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@37
-    iget v2, v2, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iget v2, v2, Landroid/com/google/common/geom/Point;->y:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -759,7 +759,7 @@
     .line 70
     .restart local p2    # "out":Landroid/graphics/Point;
     :cond_0
-    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v1, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@9
     monitor-enter v1
@@ -767,19 +767,19 @@
     #@a
     .line 71
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;
+    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mMap:Landroid/com/google/googlenav/map/Map;
 
     #@c
-    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {p1}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@f
     move-result-object v2
 
     #@10
-    iget-object v3, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v3, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@12
-    invoke-virtual {v0, v2, v3}, Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;->getPointXY(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;Landroid_maps_conflict_avoidance/com/google/common/geom/Point;)V
+    invoke-virtual {v0, v2, v3}, Landroid/com/google/googlenav/map/Map;->getPointXY(Landroid/com/google/map/MapPoint;Landroid/com/google/common/geom/Point;)V
 
     #@15
     .line 72
@@ -791,20 +791,20 @@
     #@1a
     .line 73
     :cond_1
-    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@1c
-    iget v0, v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->x:I
+    iget v0, v0, Landroid/com/google/common/geom/Point;->x:I
 
     #@1e
     iput v0, p2, Landroid/graphics/Point;->x:I
 
     #@20
     .line 74
-    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid_maps_conflict_avoidance/com/google/common/geom/Point;
+    iget-object v0, p0, Lcom/google/android/maps/PixelConverter;->mTempPoint:Landroid/com/google/common/geom/Point;
 
     #@22
-    iget v0, v0, Landroid_maps_conflict_avoidance/com/google/common/geom/Point;->y:I
+    iget v0, v0, Landroid/com/google/common/geom/Point;->y:I
 
     #@24
     iput v0, p2, Landroid/graphics/Point;->y:I

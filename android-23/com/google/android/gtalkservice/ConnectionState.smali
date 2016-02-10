@@ -1,4 +1,4 @@
-.class public final Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;
+.class public final Landroid/com/google/android/gtalkservice/ConnectionState;
 .super Ljava/lang/Object;
 .source "ConnectionState.java"
 
@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState$1;
+        Landroid/com/google/android/gtalkservice/ConnectionState$1;
     }
 .end annotation
 
@@ -20,7 +20,7 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;",
+            "Landroid/com/google/android/gtalkservice/ConnectionState;",
             ">;"
         }
     .end annotation
@@ -38,14 +38,14 @@
     #@0
     .prologue
     .line 130
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState$1;
+    new-instance v0, Landroid/com/google/android/gtalkservice/ConnectionState$1;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gtalkservice/ConnectionState$1;-><init>()V
 
     #@5
     .line 129
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gtalkservice/ConnectionState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@7
     .line 28
@@ -69,7 +69,7 @@
     move-result v0
 
     #@7
-    iput v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;->mState:I
+    iput v0, p0, Landroid/com/google/android/gtalkservice/ConnectionState;->mState:I
 
     #@9
     .line 54
@@ -158,10 +158,10 @@
     #@0
     .prologue
     .line 87
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;->mState:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/ConnectionState;->mState:I
 
     #@2
-    invoke-static {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/com/google/android/gtalkservice/ConnectionState;->toString(I)Ljava/lang/String;
 
     #@5
     move-result-object v0
@@ -178,7 +178,7 @@
     #@0
     .prologue
     .line 122
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionState;->mState:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/ConnectionState;->mState:I
 
     #@2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V

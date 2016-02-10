@@ -122,7 +122,7 @@
     iget-object v5, p0, Lcom/google/android/maps/MapActivity$1;->this$0:Lcom/google/android/maps/MapActivity;
 
     #@33
-    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;
+    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;
 
     #@36
     move-result-object v5
@@ -135,13 +135,13 @@
     iget-object v5, p0, Lcom/google/android/maps/MapActivity$1;->this$0:Lcom/google/android/maps/MapActivity;
 
     #@3b
-    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;
+    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;
 
     #@3e
     move-result-object v5
 
     #@3f
-    invoke-virtual {v5}, Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;->stop()V
+    invoke-virtual {v5}, Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;->stop()V
 
     #@42
     .line 366
@@ -155,13 +155,13 @@
     iget-object v5, p0, Lcom/google/android/maps/MapActivity$1;->this$0:Lcom/google/android/maps/MapActivity;
 
     #@48
-    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;
+    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get1(Lcom/google/android/maps/MapActivity;)Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;
 
     #@4b
     move-result-object v5
 
     #@4c
-    invoke-virtual {v5}, Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;->start()V
+    invoke-virtual {v5}, Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;->start()V
 
     #@4f
     .line 371
@@ -170,20 +170,20 @@
     iget-object v5, p0, Lcom/google/android/maps/MapActivity$1;->this$0:Lcom/google/android/maps/MapActivity;
 
     #@51
-    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get0(Lcom/google/android/maps/MapActivity;)Landroid_maps_conflict_avoidance/com/google/common/android/AndroidConfig;
+    invoke-static {v5}, Lcom/google/android/maps/MapActivity;->-get0(Lcom/google/android/maps/MapActivity;)Landroid/com/google/common/android/AndroidConfig;
 
     #@54
     move-result-object v5
 
     #@55
-    invoke-virtual {v5}, Landroid_maps_conflict_avoidance/com/google/common/android/AndroidConfig;->getConnectionFactory()Landroid_maps_conflict_avoidance/com/google/common/io/android/AndroidHttpConnectionFactory;
+    invoke-virtual {v5}, Landroid/com/google/common/android/AndroidConfig;->getConnectionFactory()Landroid/com/google/common/io/android/AndroidHttpConnectionFactory;
 
     #@58
     move-result-object v2
 
     #@59
     .line 372
-    .local v2, "factory":Landroid_maps_conflict_avoidance/com/google/common/io/android/AndroidHttpConnectionFactory;
+    .local v2, "factory":Landroid/com/google/common/io/android/AndroidHttpConnectionFactory;
     if-nez v2, :cond_2
 
     #@5b
@@ -203,14 +203,14 @@
     #@65
     .line 376
     :cond_2
-    invoke-virtual {v2}, Landroid_maps_conflict_avoidance/com/google/common/io/android/AndroidHttpConnectionFactory;->getClient()Landroid_maps_conflict_avoidance/com/google/common/io/android/GoogleHttpClient;
+    invoke-virtual {v2}, Landroid/com/google/common/io/android/AndroidHttpConnectionFactory;->getClient()Landroid/com/google/common/io/android/GoogleHttpClient;
 
     #@68
     move-result-object v0
 
     #@69
     .line 377
-    .local v0, "client":Landroid_maps_conflict_avoidance/com/google/common/io/android/GoogleHttpClient;
+    .local v0, "client":Landroid/com/google/common/io/android/GoogleHttpClient;
     if-nez v0, :cond_3
 
     #@6b
@@ -230,7 +230,7 @@
     #@75
     .line 381
     :cond_3
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/common/io/android/GoogleHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
+    invoke-virtual {v0}, Landroid/com/google/common/io/android/GoogleHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     #@78
     move-result-object v3
@@ -269,8 +269,8 @@
 
     #@8c
     .line 357
-    .end local v0    # "client":Landroid_maps_conflict_avoidance/com/google/common/io/android/GoogleHttpClient;
-    .end local v2    # "factory":Landroid_maps_conflict_avoidance/com/google/common/io/android/AndroidHttpConnectionFactory;
+    .end local v0    # "client":Landroid/com/google/common/io/android/GoogleHttpClient;
+    .end local v2    # "factory":Landroid/com/google/common/io/android/AndroidHttpConnectionFactory;
     .end local v3    # "manager":Lorg/apache/http/conn/ClientConnectionManager;
     :goto_0
     return-void

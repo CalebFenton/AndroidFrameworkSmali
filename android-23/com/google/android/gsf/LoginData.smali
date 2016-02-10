@@ -1,4 +1,4 @@
-.class public Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;
+.class public Landroid/com/google/android/gsf/LoginData;
 .super Ljava/lang/Object;
 .source "LoginData.java"
 
@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;,
-        Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$1;
+        Landroid/com/google/android/gsf/LoginData$Status;,
+        Landroid/com/google/android/gsf/LoginData$1;
     }
 .end annotation
 
@@ -21,7 +21,7 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;",
+            "Landroid/com/google/android/gsf/LoginData;",
             ">;"
         }
     .end annotation
@@ -53,7 +53,7 @@
 
 .field public mSid:Ljava/lang/String;
 
-.field public mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+.field public mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
 .field public mUsername:Ljava/lang/String;
 
@@ -65,14 +65,14 @@
     #@0
     .prologue
     .line 122
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$1;
+    new-instance v0, Landroid/com/google/android/gsf/LoginData$1;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gsf/LoginData$1;-><init>()V
 
     #@5
     .line 121
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gsf/LoginData;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@7
     .line 22
@@ -92,62 +92,62 @@
 
     #@4
     .line 46
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
 
     #@6
     .line 47
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
 
     #@8
     .line 48
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
 
     #@a
     .line 49
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
 
     #@c
     .line 50
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
 
     #@e
     .line 51
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@10
     .line 52
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
 
     #@12
     .line 53
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
 
     #@14
     .line 54
     const/4 v0, 0x0
 
     #@15
-    iput v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mFlags:I
+    iput v0, p0, Landroid/com/google/android/gsf/LoginData;->mFlags:I
 
     #@17
     .line 55
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@19
     .line 56
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
 
     #@1b
     .line 57
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
 
     #@1d
     .line 58
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
 
     #@1f
     .line 63
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
 
     #@21
     .line 65
@@ -168,79 +168,79 @@
 
     #@4
     .line 46
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
 
     #@6
     .line 47
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
 
     #@8
     .line 48
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
 
     #@a
     .line 49
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
 
     #@c
     .line 50
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
 
     #@e
     .line 51
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@10
     .line 52
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
 
     #@12
     .line 53
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
 
     #@14
     .line 54
     const/4 v0, 0x0
 
     #@15
-    iput v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mFlags:I
+    iput v0, p0, Landroid/com/google/android/gsf/LoginData;->mFlags:I
 
     #@17
     .line 55
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@19
     .line 56
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
 
     #@1b
     .line 57
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
 
     #@1d
     .line 58
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
 
     #@1f
     .line 63
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
 
     #@21
     .line 134
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/LoginData;->readFromParcel(Landroid/os/Parcel;)V
 
     #@24
     .line 133
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcel;Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;)V
+.method synthetic constructor <init>(Landroid/os/Parcel;Landroid/com/google/android/gsf/LoginData;)V
     .locals 0
     .param p1, "in"    # Landroid/os/Parcel;
 
     #@0
     .prologue
-    invoke-direct {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;-><init>(Landroid/os/Parcel;)V
+    invoke-direct {p0, p1}, Landroid/com/google/android/gsf/LoginData;-><init>(Landroid/os/Parcel;)V
 
     #@3
     return-void
@@ -276,7 +276,7 @@
     move-result-object v2
 
     #@5
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
 
     #@7
     .line 140
@@ -286,7 +286,7 @@
     move-result-object v2
 
     #@b
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
 
     #@d
     .line 141
@@ -296,7 +296,7 @@
     move-result-object v2
 
     #@11
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
 
     #@13
     .line 142
@@ -306,7 +306,7 @@
     move-result-object v2
 
     #@17
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
 
     #@19
     .line 143
@@ -316,7 +316,7 @@
     move-result-object v2
 
     #@1d
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
 
     #@1f
     .line 144
@@ -335,7 +335,7 @@
 
     #@26
     .line 146
-    iput-object v3, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iput-object v3, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@28
     .line 151
@@ -346,7 +346,7 @@
     move-result-object v2
 
     #@2c
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
 
     #@2e
     .line 152
@@ -356,7 +356,7 @@
     move-result-object v2
 
     #@32
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
 
     #@34
     .line 153
@@ -366,7 +366,7 @@
     move-result v2
 
     #@38
-    iput v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mFlags:I
+    iput v2, p0, Landroid/com/google/android/gsf/LoginData;->mFlags:I
 
     #@3a
     .line 154
@@ -382,7 +382,7 @@
 
     #@40
     .line 156
-    iput-object v3, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iput-object v3, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@42
     .line 160
@@ -393,7 +393,7 @@
     move-result-object v2
 
     #@46
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
 
     #@48
     .line 161
@@ -403,7 +403,7 @@
     move-result-object v2
 
     #@4c
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
 
     #@4e
     .line 162
@@ -413,7 +413,7 @@
     move-result-object v2
 
     #@52
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
 
     #@54
     .line 163
@@ -423,7 +423,7 @@
     move-result-object v2
 
     #@58
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
 
     #@5a
     .line 138
@@ -436,11 +436,11 @@
     new-array v2, v0, [B
 
     #@5d
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@5f
     .line 149
-    iget-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iget-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@61
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->readByteArray([B)V
@@ -452,13 +452,13 @@
     .line 158
     .restart local v1    # "status":Ljava/lang/String;
     :cond_1
-    invoke-static {v1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;->valueOf(Ljava/lang/String;)Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    invoke-static {v1}, Landroid/com/google/android/gsf/LoginData$Status;->valueOf(Ljava/lang/String;)Landroid/com/google/android/gsf/LoginData$Status;
 
     #@68
     move-result-object v2
 
     #@69
-    iput-object v2, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iput-object v2, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@6b
     goto :goto_1
@@ -475,42 +475,42 @@
 
     #@1
     .line 95
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mUsername:Ljava/lang/String;
 
     #@3
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@6
     .line 96
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mEncryptedPassword:Ljava/lang/String;
 
     #@8
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@b
     .line 97
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mPassword:Ljava/lang/String;
 
     #@d
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@10
     .line 98
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mService:Ljava/lang/String;
 
     #@12
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@15
     .line 99
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaToken:Ljava/lang/String;
 
     #@17
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@1a
     .line 100
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@1c
     if-nez v0, :cond_0
@@ -525,28 +525,28 @@
     #@22
     .line 106
     :goto_0
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaMimeType:Ljava/lang/String;
 
     #@24
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@27
     .line 107
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaAnswer:Ljava/lang/String;
 
     #@29
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@2c
     .line 108
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mFlags:I
+    iget v0, p0, Landroid/com/google/android/gsf/LoginData;->mFlags:I
 
     #@2e
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     #@31
     .line 109
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@33
     if-nez v0, :cond_1
@@ -558,28 +558,28 @@
     #@38
     .line 114
     :goto_1
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mJsonString:Ljava/lang/String;
 
     #@3a
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@3d
     .line 115
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mSid:Ljava/lang/String;
 
     #@3f
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@42
     .line 116
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mAuthtoken:Ljava/lang/String;
 
     #@44
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@47
     .line 117
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mOAuthAccessToken:Ljava/lang/String;
 
     #@49
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
@@ -591,7 +591,7 @@
     #@4d
     .line 103
     :cond_0
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@4f
     array-length v0, v0
@@ -601,7 +601,7 @@
 
     #@53
     .line 104
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mCaptchaData:[B
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mCaptchaData:[B
 
     #@55
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
@@ -612,10 +612,10 @@
     #@59
     .line 112
     :cond_1
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData;->mStatus:Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;
+    iget-object v0, p0, Landroid/com/google/android/gsf/LoginData;->mStatus:Landroid/com/google/android/gsf/LoginData$Status;
 
     #@5b
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/android/gsf/LoginData$Status;->name()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/com/google/android/gsf/LoginData$Status;->name()Ljava/lang/String;
 
     #@5e
     move-result-object v0

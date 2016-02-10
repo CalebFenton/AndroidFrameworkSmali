@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+.field private final mMapPoint:Landroid/com/google/map/MapPoint;
 
 
 # direct methods
@@ -31,22 +31,22 @@
     #@a
     .line 51
     :cond_0
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    new-instance v0, Landroid/com/google/map/MapPoint;
 
     #@c
-    invoke-direct {v0, p1, p2}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;-><init>(II)V
+    invoke-direct {v0, p1, p2}, Landroid/com/google/map/MapPoint;-><init>(II)V
 
     #@f
-    iput-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@11
     .line 47
     return-void
 .end method
 
-.method constructor <init>(Landroid_maps_conflict_avoidance/com/google/map/MapPoint;)V
+.method constructor <init>(Landroid/com/google/map/MapPoint;)V
     .locals 0
-    .param p1, "mp"    # Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    .param p1, "mp"    # Landroid/com/google/map/MapPoint;
 
     #@0
     .prologue
@@ -55,7 +55,7 @@
 
     #@3
     .line 32
-    iput-object p1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iput-object p1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@5
     .line 31
@@ -98,19 +98,19 @@
     #@b
     .line 82
     .local v0, "p":Lcom/google/android/maps/GeoPoint;
-    invoke-virtual {v0}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {v0}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@e
     move-result-object v1
 
     #@f
-    invoke-virtual {p0}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    invoke-virtual {p0}, Lcom/google/android/maps/GeoPoint;->getMapPoint()Landroid/com/google/map/MapPoint;
 
     #@12
     move-result-object v2
 
     #@13
-    invoke-virtual {v1, v2}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/com/google/map/MapPoint;->equals(Ljava/lang/Object;)Z
 
     #@16
     move-result v1
@@ -138,10 +138,10 @@
     #@0
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@2
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLatitude()I
+    invoke-virtual {v0}, Landroid/com/google/map/MapPoint;->getLatitude()I
 
     #@5
     move-result v0
@@ -156,10 +156,10 @@
     #@0
     .prologue
     .line 69
-    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@2
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLongitude()I
+    invoke-virtual {v0}, Landroid/com/google/map/MapPoint;->getLongitude()I
 
     #@5
     move-result v0
@@ -168,13 +168,13 @@
     return v0
 .end method
 
-.method getMapPoint()Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+.method getMapPoint()Landroid/com/google/map/MapPoint;
     .locals 1
 
     #@0
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@2
     return-object v0
@@ -186,10 +186,10 @@
     #@0
     .prologue
     .line 91
-    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v0, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@2
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->hashCode()I
+    invoke-virtual {v0}, Landroid/com/google/map/MapPoint;->hashCode()I
 
     #@5
     move-result v0
@@ -210,10 +210,10 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     #@5
-    iget-object v1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@7
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLatitude()I
+    invoke-virtual {v1}, Landroid/com/google/map/MapPoint;->getLatitude()I
 
     #@a
     move-result v1
@@ -240,10 +240,10 @@
     move-result-object v0
 
     #@1a
-    iget-object v1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid_maps_conflict_avoidance/com/google/map/MapPoint;
+    iget-object v1, p0, Lcom/google/android/maps/GeoPoint;->mMapPoint:Landroid/com/google/map/MapPoint;
 
     #@1c
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/map/MapPoint;->getLongitude()I
+    invoke-virtual {v1}, Landroid/com/google/map/MapPoint;->getLongitude()I
 
     #@1f
     move-result v1

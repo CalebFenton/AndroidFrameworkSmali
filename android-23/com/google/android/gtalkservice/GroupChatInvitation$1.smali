@@ -1,4 +1,4 @@
-.class final Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;
+.class final Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;
 .super Ljava/lang/Object;
 .source "GroupChatInvitation.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+    value = Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;",
+        "Landroid/com/google/android/gtalkservice/GroupChatInvitation;",
         ">;"
     }
 .end annotation
@@ -42,17 +42,17 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gtalkservice/GroupChatInvitation;
     .locals 1
     .param p1, "source"    # Landroid/os/Parcel;
 
     #@0
     .prologue
     .line 81
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+    new-instance v0, Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 
     #@2
-    invoke-direct {v0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;-><init>(Landroid/os/Parcel;)V
+    invoke-direct {v0, p1}, Landroid/com/google/android/gtalkservice/GroupChatInvitation;-><init>(Landroid/os/Parcel;)V
 
     #@5
     return-object v0
@@ -65,7 +65,7 @@
     #@0
     .prologue
     .line 80
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;->createFromParcel(Landroid/os/Parcel;)Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;->createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 
     #@3
     move-result-object v0
@@ -74,14 +74,14 @@
     return-object v0
 .end method
 
-.method public newArray(I)[Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+.method public newArray(I)[Landroid/com/google/android/gtalkservice/GroupChatInvitation;
     .locals 1
     .param p1, "size"    # I
 
     #@0
     .prologue
     .line 85
-    new-array v0, p1, [Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+    new-array v0, p1, [Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 
     #@2
     return-object v0
@@ -94,7 +94,7 @@
     #@0
     .prologue
     .line 84
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation$1;->newArray(I)[Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/GroupChatInvitation;
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gtalkservice/GroupChatInvitation$1;->newArray(I)[Landroid/com/google/android/gtalkservice/GroupChatInvitation;
 
     #@3
     move-result-object v0

@@ -23,7 +23,7 @@
 
 .field public final fixedPointScreenCoords:[F
 
-.field public zoom:Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+.field public zoom:Landroid/com/google/map/Zoom;
 
 
 # direct methods

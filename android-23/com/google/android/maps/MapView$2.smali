@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/maps/MapView;->setup(Landroid_maps_conflict_avoidance/com/google/googlenav/map/Map;Landroid_maps_conflict_avoidance/com/google/googlenav/map/TrafficService;Landroid_maps_conflict_avoidance/com/google/googlenav/datarequest/DataRequestDispatcher;)V
+    value = Lcom/google/android/maps/MapView;->setup(Landroid/com/google/googlenav/map/Map;Landroid/com/google/googlenav/map/TrafficService;Landroid/com/google/googlenav/datarequest/DataRequestDispatcher;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

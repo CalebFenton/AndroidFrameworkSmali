@@ -265,19 +265,19 @@
     iget-object v3, p0, Lcom/google/android/maps/ZoomHelper;->mSnapshot:Lcom/google/android/maps/ZoomHelper$Snapshot;
 
     #@10
-    iget-object v3, v3, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    iget-object v3, v3, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid/com/google/map/Zoom;
 
     #@12
     iget-object v4, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@14
-    invoke-virtual {v4}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v4}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@17
     move-result-object v4
 
     #@18
-    invoke-direct {p0, v3, v4}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid_maps_conflict_avoidance/com/google/map/Zoom;Landroid_maps_conflict_avoidance/com/google/map/Zoom;)F
+    invoke-direct {p0, v3, v4}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid/com/google/map/Zoom;Landroid/com/google/map/Zoom;)F
 
     #@1b
     move-result v2
@@ -571,13 +571,13 @@
     iget-object v2, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@2c
-    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@2f
     move-result-object v2
 
     #@30
-    iput-object v2, v1, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    iput-object v2, v1, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid/com/google/map/Zoom;
 
     #@32
     .line 472
@@ -595,15 +595,15 @@
     return-void
 .end method
 
-.method private getScale(Landroid_maps_conflict_avoidance/com/google/map/Zoom;Landroid_maps_conflict_avoidance/com/google/map/Zoom;)F
+.method private getScale(Landroid/com/google/map/Zoom;Landroid/com/google/map/Zoom;)F
     .locals 2
-    .param p1, "numerator"    # Landroid_maps_conflict_avoidance/com/google/map/Zoom;
-    .param p2, "denominator"    # Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .param p1, "numerator"    # Landroid/com/google/map/Zoom;
+    .param p2, "denominator"    # Landroid/com/google/map/Zoom;
 
     #@0
     .prologue
     .line 405
-    invoke-virtual {p2, p1}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->isMoreZoomedIn(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)Z
+    invoke-virtual {p2, p1}, Landroid/com/google/map/Zoom;->isMoreZoomedIn(Landroid/com/google/map/Zoom;)Z
 
     #@3
     move-result v0
@@ -613,7 +613,7 @@
 
     #@6
     .line 406
-    invoke-virtual {p1, p2}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoomRatio(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)I
+    invoke-virtual {p1, p2}, Landroid/com/google/map/Zoom;->getZoomRatio(Landroid/com/google/map/Zoom;)I
 
     #@9
     move-result v0
@@ -629,7 +629,7 @@
     #@c
     .line 407
     :cond_0
-    invoke-virtual {p2, p1}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoomRatio(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)I
+    invoke-virtual {p2, p1}, Landroid/com/google/map/Zoom;->getZoomRatio(Landroid/com/google/map/Zoom;)I
 
     #@f
     move-result v0
@@ -678,7 +678,7 @@
     iget-object v0, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@f
-    invoke-virtual {v0}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v0}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@12
     move-result-object v0
@@ -687,10 +687,10 @@
     iget-object v2, p0, Lcom/google/android/maps/ZoomHelper;->mSnapshot:Lcom/google/android/maps/ZoomHelper$Snapshot;
 
     #@15
-    iget-object v2, v2, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    iget-object v2, v2, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid/com/google/map/Zoom;
 
     #@17
-    invoke-direct {p0, v0, v2}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid_maps_conflict_avoidance/com/google/map/Zoom;Landroid_maps_conflict_avoidance/com/google/map/Zoom;)F
+    invoke-direct {p0, v0, v2}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid/com/google/map/Zoom;Landroid/com/google/map/Zoom;)F
 
     #@1a
     move-result v2
@@ -998,9 +998,9 @@
     return-void
 .end method
 
-.method doZoom(Landroid_maps_conflict_avoidance/com/google/map/Zoom;ZII)Z
+.method doZoom(Landroid/com/google/map/Zoom;ZII)Z
     .locals 6
-    .param p1, "newZoom"    # Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .param p1, "newZoom"    # Landroid/com/google/map/Zoom;
     .param p2, "delay"    # Z
     .param p3, "xOffset"    # I
     .param p4, "yOffset"    # I
@@ -1050,7 +1050,7 @@
     iget-object v2, p0, Lcom/google/android/maps/ZoomHelper;->mController:Lcom/google/android/maps/MapController;
 
     #@17
-    invoke-virtual {v2, p1}, Lcom/google/android/maps/MapController;->zoomTo(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)V
+    invoke-virtual {v2, p1}, Lcom/google/android/maps/MapController;->zoomTo(Landroid/com/google/map/Zoom;)V
 
     #@1a
     .line 169
@@ -1195,31 +1195,31 @@
     iget-object v2, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@2
-    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@5
     move-result-object v0
 
     #@6
     .line 137
-    .local v0, "currentZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .local v0, "currentZoom":Landroid/com/google/map/Zoom;
     if-eqz p1, :cond_1
 
     #@8
     .line 138
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getNextHigherZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v0}, Landroid/com/google/map/Zoom;->getNextHigherZoom()Landroid/com/google/map/Zoom;
 
     #@b
     move-result-object v1
 
     #@c
     .line 141
-    .local v1, "newZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .local v1, "newZoom":Landroid/com/google/map/Zoom;
     :goto_0
     if-eqz v1, :cond_0
 
     #@e
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoomLevel()I
+    invoke-virtual {v1}, Landroid/com/google/map/Zoom;->getZoomLevel()I
 
     #@11
     move-result v2
@@ -1246,21 +1246,21 @@
 
     #@1c
     .line 139
-    .end local v1    # "newZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .end local v1    # "newZoom":Landroid/com/google/map/Zoom;
     :cond_1
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getNextLowerZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v0}, Landroid/com/google/map/Zoom;->getNextLowerZoom()Landroid/com/google/map/Zoom;
 
     #@1f
     move-result-object v1
 
     #@20
-    .restart local v1    # "newZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .restart local v1    # "newZoom":Landroid/com/google/map/Zoom;
     goto :goto_0
 
     #@21
     .line 146
     :cond_2
-    invoke-virtual {p0, v1, p2, p3, p4}, Lcom/google/android/maps/ZoomHelper;->doZoom(Landroid_maps_conflict_avoidance/com/google/map/Zoom;ZII)Z
+    invoke-virtual {p0, v1, p2, p3, p4}, Lcom/google/android/maps/ZoomHelper;->doZoom(Landroid/com/google/map/Zoom;ZII)Z
 
     #@24
     move-result v2
@@ -1312,15 +1312,15 @@
     iget-object v12, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@16
-    invoke-virtual {v12}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v12}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@19
     move-result-object v6
 
     #@1a
     .line 247
-    .local v6, "oldZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
-    invoke-virtual {v6}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoomLevel()I
+    .local v6, "oldZoom":Landroid/com/google/map/Zoom;
+    invoke-virtual {v6}, Landroid/com/google/map/Zoom;->getZoomLevel()I
 
     #@1d
     move-result v12
@@ -1334,18 +1334,18 @@
     #@22
     .line 248
     .local v4, "newLevel":I
-    invoke-static {v4}, Landroid_maps_conflict_avoidance/com/google/map/Zoom;->getZoom(I)Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-static {v4}, Landroid/com/google/map/Zoom;->getZoom(I)Landroid/com/google/map/Zoom;
 
     #@25
     move-result-object v5
 
     #@26
     .line 250
-    .local v5, "newZoom":Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    .local v5, "newZoom":Landroid/com/google/map/Zoom;
     iget-object v12, p0, Lcom/google/android/maps/ZoomHelper;->mController:Lcom/google/android/maps/MapController;
 
     #@28
-    invoke-virtual {v12, v5}, Lcom/google/android/maps/MapController;->zoomTo(Landroid_maps_conflict_avoidance/com/google/map/Zoom;)V
+    invoke-virtual {v12, v5}, Lcom/google/android/maps/MapController;->zoomTo(Landroid/com/google/map/Zoom;)V
 
     #@2b
     .line 253
@@ -1993,7 +1993,7 @@
     iget-object v2, p0, Lcom/google/android/maps/ZoomHelper;->mMapView:Lcom/google/android/maps/MapView;
 
     #@2b
-    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    invoke-virtual {v2}, Lcom/google/android/maps/MapView;->getZoom()Landroid/com/google/map/Zoom;
 
     #@2e
     move-result-object v2
@@ -2002,10 +2002,10 @@
     iget-object v3, p0, Lcom/google/android/maps/ZoomHelper;->mSnapshot:Lcom/google/android/maps/ZoomHelper$Snapshot;
 
     #@31
-    iget-object v3, v3, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid_maps_conflict_avoidance/com/google/map/Zoom;
+    iget-object v3, v3, Lcom/google/android/maps/ZoomHelper$Snapshot;->zoom:Landroid/com/google/map/Zoom;
 
     #@33
-    invoke-direct {p0, v2, v3}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid_maps_conflict_avoidance/com/google/map/Zoom;Landroid_maps_conflict_avoidance/com/google/map/Zoom;)F
+    invoke-direct {p0, v2, v3}, Lcom/google/android/maps/ZoomHelper;->getScale(Landroid/com/google/map/Zoom;Landroid/com/google/map/Zoom;)F
 
     #@36
     move-result v2

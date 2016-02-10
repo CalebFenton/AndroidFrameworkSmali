@@ -1,4 +1,4 @@
-.class public Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;
+.class public Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;
 .super Ljava/lang/Object;
 .source "GoogleLoginCredentialsResult.java"
 
@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;
+        Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;
     }
 .end annotation
 
@@ -20,7 +20,7 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;",
+            "Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;",
             ">;"
         }
     .end annotation
@@ -42,14 +42,14 @@
     #@0
     .prologue
     .line 127
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;
+    new-instance v0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult$1;-><init>()V
 
     #@5
     .line 126
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@7
     .line 47
@@ -69,15 +69,15 @@
 
     #@4
     .line 87
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
 
     #@6
     .line 88
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iput-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@8
     .line 89
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
 
     #@a
     .line 86
@@ -95,20 +95,20 @@
 
     #@3
     .line 138
-    invoke-virtual {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->readFromParcel(Landroid/os/Parcel;)V
 
     #@6
     .line 137
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcel;Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;)V
+.method synthetic constructor <init>(Landroid/os/Parcel;Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;)V
     .locals 0
     .param p1, "in"    # Landroid/os/Parcel;
 
     #@0
     .prologue
-    invoke-direct {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;-><init>(Landroid/os/Parcel;)V
+    invoke-direct {p0, p1}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;-><init>(Landroid/os/Parcel;)V
 
     #@3
     return-void
@@ -122,13 +122,13 @@
     #@0
     .prologue
     .line 112
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@2
     if-eqz v0, :cond_0
 
     #@4
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@6
     invoke-virtual {v0}, Landroid/content/Intent;->describeContents()I
@@ -161,7 +161,7 @@
     move-result-object v1
 
     #@4
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
 
     #@6
     .line 143
@@ -171,7 +171,7 @@
     move-result-object v1
 
     #@a
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
+    iput-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
 
     #@c
     .line 145
@@ -186,7 +186,7 @@
     const/4 v1, 0x0
 
     #@11
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iput-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@13
     .line 147
@@ -203,21 +203,21 @@
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     #@1b
-    iput-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iput-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@1d
     .line 149
-    iget-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@1f
     invoke-virtual {v1, p1}, Landroid/content/Intent;->readFromParcel(Landroid/os/Parcel;)V
 
     #@22
     .line 150
-    iget-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v1, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@24
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->getClass()Ljava/lang/Class;
 
     #@27
     move-result-object v2
@@ -248,21 +248,21 @@
 
     #@1
     .line 116
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mAccount:Ljava/lang/String;
 
     #@3
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@6
     .line 117
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsString:Ljava/lang/String;
 
     #@8
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@b
     .line 118
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@d
     if-eqz v0, :cond_0
@@ -276,7 +276,7 @@
 
     #@13
     .line 120
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
+    iget-object v0, p0, Landroid/com/google/android/gsf/GoogleLoginCredentialsResult;->mCredentialsIntent:Landroid/content/Intent;
 
     #@15
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V

@@ -1,5 +1,5 @@
-.class public final Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$Partner;
-.super Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$NameValueTable;
+.class public final Landroid/com/google/android/gsf/GoogleSettingsContract$Partner;
+.super Landroid/com/google/android/gsf/GoogleSettingsContract$NameValueTable;
 .source "GoogleSettingsContract.java"
 
 
@@ -24,7 +24,7 @@
 
     #@7
     .line 184
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
+    sput-object v0, Landroid/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
 
     #@9
     .line 76
@@ -37,7 +37,7 @@
     #@0
     .prologue
     .line 76
-    invoke-direct {p0}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$NameValueTable;-><init>()V
+    invoke-direct {p0}, Landroid/com/google/android/gsf/GoogleSettingsContract$NameValueTable;-><init>()V
 
     #@3
     return-void
@@ -62,7 +62,7 @@
     .line 87
     .local v6, "c":Landroid/database/Cursor;
     :try_start_0
-    sget-object v1, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v1, Landroid/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
 
     #@4
     const/4 v0, 0x1
@@ -193,7 +193,7 @@
     move-result-object v1
 
     #@4a
-    sget-object v2, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v2, Landroid/com/google/android/gsf/GoogleSettingsContract$Partner;->CONTENT_URI:Landroid/net/Uri;
 
     #@4c
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
@@ -250,7 +250,7 @@
     #@0
     .prologue
     .line 107
-    invoke-static {p0, p1}, Landroid_maps_conflict_avoidance/com/google/android/gsf/GoogleSettingsContract$Partner;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Landroid/com/google/android/gsf/GoogleSettingsContract$Partner;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     #@3
     move-result-object v0

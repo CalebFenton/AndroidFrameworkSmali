@@ -1,4 +1,4 @@
-.class public final Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;
+.class public final Landroid/com/google/android/gtalkservice/ConnectionError;
 .super Ljava/lang/Object;
 .source "ConnectionError.java"
 
@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError$1;
+        Landroid/com/google/android/gtalkservice/ConnectionError$1;
     }
 .end annotation
 
@@ -20,7 +20,7 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;",
+            "Landroid/com/google/android/gtalkservice/ConnectionError;",
             ">;"
         }
     .end annotation
@@ -38,14 +38,14 @@
     #@0
     .prologue
     .line 162
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError$1;
+    new-instance v0, Landroid/com/google/android/gtalkservice/ConnectionError$1;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gtalkservice/ConnectionError$1;-><init>()V
 
     #@5
     .line 161
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gtalkservice/ConnectionError;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@7
     .line 27
@@ -69,7 +69,7 @@
     move-result v0
 
     #@7
-    iput v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;->mError:I
+    iput v0, p0, Landroid/com/google/android/gtalkservice/ConnectionError;->mError:I
 
     #@9
     .line 71
@@ -205,10 +205,10 @@
     #@0
     .prologue
     .line 100
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;->mError:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/ConnectionError;->mError:I
 
     #@2
-    invoke-static {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/com/google/android/gtalkservice/ConnectionError;->toString(I)Ljava/lang/String;
 
     #@5
     move-result-object v0
@@ -225,7 +225,7 @@
     #@0
     .prologue
     .line 154
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/ConnectionError;->mError:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/ConnectionError;->mError:I
 
     #@2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V

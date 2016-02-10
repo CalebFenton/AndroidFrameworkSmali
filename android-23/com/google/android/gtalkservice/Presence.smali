@@ -1,4 +1,4 @@
-.class public final Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;
+.class public final Landroid/com/google/android/gtalkservice/Presence;
 .super Ljava/lang/Object;
 .source "Presence.java"
 
@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;,
-        Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$1;
+        Landroid/com/google/android/gtalkservice/Presence$Show;,
+        Landroid/com/google/android/gtalkservice/Presence$1;
     }
 .end annotation
 
@@ -21,13 +21,13 @@
         value = {
             "Landroid/os/Parcelable$Creator",
             "<",
-            "Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;",
+            "Landroid/com/google/android/gtalkservice/Presence;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final OFFLINE:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;
+.field public static final OFFLINE:Landroid/com/google/android/gtalkservice/Presence;
 
 
 # instance fields
@@ -61,7 +61,7 @@
 
 .field private mInvisible:Z
 
-.field private mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+.field private mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
 .field private mStatus:Ljava/lang/String;
 
@@ -79,24 +79,24 @@
     #@0
     .prologue
     .line 45
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;
+    new-instance v0, Landroid/com/google/android/gtalkservice/Presence;
 
     #@2
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gtalkservice/Presence;-><init>()V
 
     #@5
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->OFFLINE:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;
+    sput-object v0, Landroid/com/google/android/gtalkservice/Presence;->OFFLINE:Landroid/com/google/android/gtalkservice/Presence;
 
     #@7
     .line 537
-    new-instance v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$1;
+    new-instance v0, Landroid/com/google/android/gtalkservice/Presence$1;
 
     #@9
-    invoke-direct {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$1;-><init>()V
+    invoke-direct {v0}, Landroid/com/google/android/gtalkservice/Presence$1;-><init>()V
 
     #@c
     .line 536
-    sput-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Landroid/com/google/android/gtalkservice/Presence;->CREATOR:Landroid/os/Parcelable$Creator;
 
     #@e
     .line 36
@@ -109,7 +109,7 @@
     #@0
     .prologue
     .line 71
-    sget-object v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;->NONE:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    sget-object v0, Landroid/com/google/android/gtalkservice/Presence$Show;->NONE:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@2
     const/4 v1, 0x0
@@ -121,7 +121,7 @@
     const/16 v3, 0x8
 
     #@6
-    invoke-direct {p0, v1, v0, v2, v3}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;-><init>(ZLandroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;Ljava/lang/String;I)V
+    invoke-direct {p0, v1, v0, v2, v3}, Landroid/com/google/android/gtalkservice/Presence;-><init>(ZLandroid/com/google/android/gtalkservice/Presence$Show;Ljava/lang/String;I)V
 
     #@9
     .line 70
@@ -151,7 +151,7 @@
     move-result v0
 
     #@9
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setStatusMax(I)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setStatusMax(I)V
 
     #@c
     .line 99
@@ -161,7 +161,7 @@
     move-result v0
 
     #@10
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setStatusListMax(I)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setStatusListMax(I)V
 
     #@13
     .line 100
@@ -171,7 +171,7 @@
     move-result v0
 
     #@17
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setStatusListContentsMax(I)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setStatusListContentsMax(I)V
 
     #@1a
     .line 101
@@ -188,7 +188,7 @@
 
     #@21
     :goto_0
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setAllowInvisibility(Z)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setAllowInvisibility(Z)V
 
     #@24
     .line 103
@@ -205,11 +205,11 @@
 
     #@2b
     :goto_1
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setAvailable(Z)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setAvailable(Z)V
 
     #@2e
     .line 104
-    const-class v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    const-class v0, Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@30
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -224,10 +224,10 @@
     move-result-object v0
 
     #@38
-    check-cast v0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    check-cast v0, Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@3a
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setShow(Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setShow(Landroid/com/google/android/gtalkservice/Presence$Show;)V
 
     #@3d
     .line 107
@@ -237,7 +237,7 @@
     move-result-object v0
 
     #@41
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
 
     #@43
     .line 108
@@ -251,7 +251,7 @@
 
     #@49
     :goto_2
-    invoke-virtual {p0, v1}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setInvisible(Z)Z
+    invoke-virtual {p0, v1}, Landroid/com/google/android/gtalkservice/Presence;->setInvisible(Z)Z
 
     #@4c
     .line 110
@@ -261,11 +261,11 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     #@51
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
 
     #@53
     .line 111
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
 
     #@55
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
@@ -278,11 +278,11 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     #@5d
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
 
     #@5f
     .line 114
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
 
     #@61
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
@@ -295,7 +295,7 @@
     move-result v0
 
     #@68
-    invoke-virtual {p0, v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->setCapabilities(I)V
+    invoke-virtual {p0, v0}, Landroid/com/google/android/gtalkservice/Presence;->setCapabilities(I)V
 
     #@6b
     .line 97
@@ -326,10 +326,10 @@
     goto :goto_2
 .end method
 
-.method public constructor <init>(ZLandroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;Ljava/lang/String;I)V
+.method public constructor <init>(ZLandroid/com/google/android/gtalkservice/Presence$Show;Ljava/lang/String;I)V
     .locals 1
     .param p1, "available"    # Z
-    .param p2, "show"    # Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    .param p2, "show"    # Landroid/com/google/android/gtalkservice/Presence$Show;
     .param p3, "status"    # Ljava/lang/String;
     .param p4, "caps"    # I
 
@@ -340,22 +340,22 @@
 
     #@3
     .line 83
-    iput-boolean p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAvailable:Z
+    iput-boolean p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mAvailable:Z
 
     #@5
     .line 84
-    iput-object p2, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    iput-object p2, p0, Landroid/com/google/android/gtalkservice/Presence;->mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@7
     .line 85
-    iput-object p3, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
+    iput-object p3, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
 
     #@9
     .line 86
     const/4 v0, 0x0
 
     #@a
-    iput-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mInvisible:Z
+    iput-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mInvisible:Z
 
     #@c
     .line 87
@@ -365,7 +365,7 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     #@11
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
 
     #@13
     .line 88
@@ -375,11 +375,11 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     #@18
-    iput-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
+    iput-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
 
     #@1a
     .line 89
-    iput p4, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iput p4, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@1c
     .line 82
@@ -394,7 +394,7 @@
     #@0
     .prologue
     .line 206
-    iget-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAllowInvisibility:Z
+    iget-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mAllowInvisibility:Z
 
     #@2
     return v0
@@ -418,7 +418,7 @@
     #@0
     .prologue
     .line 419
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@2
     return v0
@@ -430,7 +430,7 @@
     #@0
     .prologue
     .line 186
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusListContentsMax:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusListContentsMax:I
 
     #@2
     return v0
@@ -442,7 +442,7 @@
     #@0
     .prologue
     .line 166
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusListMax:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusListMax:I
 
     #@2
     return v0
@@ -454,7 +454,7 @@
     #@0
     .prologue
     .line 146
-    iget v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusMax:I
+    iget v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusMax:I
 
     #@2
     return v0
@@ -466,7 +466,7 @@
     #@0
     .prologue
     .line 228
-    iget-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAvailable:Z
+    iget-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mAvailable:Z
 
     #@2
     return v0
@@ -478,7 +478,7 @@
     #@0
     .prologue
     .line 248
-    iget-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mInvisible:Z
+    iget-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mInvisible:Z
 
     #@2
     return v0
@@ -491,7 +491,7 @@
     #@0
     .prologue
     .line 219
-    iput-boolean p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAllowInvisibility:Z
+    iput-boolean p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mAllowInvisibility:Z
 
     #@2
     .line 218
@@ -505,7 +505,7 @@
     #@0
     .prologue
     .line 239
-    iput-boolean p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAvailable:Z
+    iput-boolean p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mAvailable:Z
 
     #@2
     .line 238
@@ -519,7 +519,7 @@
     #@0
     .prologue
     .line 428
-    iput p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iput p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@2
     .line 427
@@ -533,14 +533,14 @@
     #@0
     .prologue
     .line 259
-    iput-boolean p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mInvisible:Z
+    iput-boolean p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mInvisible:Z
 
     #@2
     .line 262
     if-eqz p1, :cond_0
 
     #@4
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->allowInvisibility()Z
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->allowInvisibility()Z
 
     #@7
     move-result v0
@@ -565,14 +565,14 @@
     return v0
 .end method
 
-.method public setShow(Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;)V
+.method public setShow(Landroid/com/google/android/gtalkservice/Presence$Show;)V
     .locals 0
-    .param p1, "show"    # Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    .param p1, "show"    # Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@0
     .prologue
     .line 288
-    iput-object p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    iput-object p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@2
     .line 287
@@ -586,7 +586,7 @@
     #@0
     .prologue
     .line 197
-    iput p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusListContentsMax:I
+    iput p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusListContentsMax:I
 
     #@2
     .line 196
@@ -600,7 +600,7 @@
     #@0
     .prologue
     .line 177
-    iput p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusListMax:I
+    iput p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusListMax:I
 
     #@2
     .line 176
@@ -614,7 +614,7 @@
     #@0
     .prologue
     .line 157
-    iput p1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatusMax:I
+    iput p1, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatusMax:I
 
     #@2
     .line 156
@@ -627,7 +627,7 @@
     #@0
     .prologue
     .line 549
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->isAvailable()Z
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->isAvailable()Z
 
     #@3
     move-result v1
@@ -645,7 +645,7 @@
     #@a
     .line 553
     :cond_0
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->isInvisible()Z
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->isInvisible()Z
 
     #@d
     move-result v1
@@ -674,10 +674,10 @@
     #@1b
     .line 559
     .local v0, "sb":Ljava/lang/StringBuilder;
-    iget-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    iget-object v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@1d
-    sget-object v2, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;->NONE:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    sget-object v2, Landroid/com/google/android/gtalkservice/Presence$Show;->NONE:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@1f
     if-ne v1, v2, :cond_6
@@ -692,7 +692,7 @@
     #@27
     .line 565
     :goto_0
-    iget v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iget v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@29
     and-int/lit8 v1, v1, 0x8
@@ -710,7 +710,7 @@
     #@33
     .line 568
     :cond_2
-    iget v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iget v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@35
     and-int/lit8 v1, v1, 0x1
@@ -728,7 +728,7 @@
     #@3f
     .line 571
     :cond_3
-    iget v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iget v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@41
     and-int/lit8 v1, v1, 0x2
@@ -746,7 +746,7 @@
     #@4b
     .line 574
     :cond_4
-    iget v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mCapabilities:I
+    iget v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mCapabilities:I
 
     #@4d
     and-int/lit8 v1, v1, 0x4
@@ -775,10 +775,10 @@
     #@5c
     .line 562
     :cond_6
-    iget-object v1, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    iget-object v1, p0, Landroid/com/google/android/gtalkservice/Presence;->mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@5e
-    invoke-virtual {v1}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/com/google/android/gtalkservice/Presence$Show;->toString()Ljava/lang/String;
 
     #@61
     move-result-object v1
@@ -804,7 +804,7 @@
 
     #@2
     .line 517
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->getStatusMax()I
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->getStatusMax()I
 
     #@5
     move-result v0
@@ -814,7 +814,7 @@
 
     #@9
     .line 518
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->getStatusListMax()I
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->getStatusListMax()I
 
     #@c
     move-result v0
@@ -824,7 +824,7 @@
 
     #@10
     .line 519
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->getStatusListContentsMax()I
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->getStatusListContentsMax()I
 
     #@13
     move-result v0
@@ -834,7 +834,7 @@
 
     #@17
     .line 520
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->allowInvisibility()Z
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->allowInvisibility()Z
 
     #@1a
     move-result v0
@@ -851,7 +851,7 @@
 
     #@21
     .line 522
-    iget-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mAvailable:Z
+    iget-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mAvailable:Z
 
     #@23
     if-eqz v0, :cond_1
@@ -865,10 +865,10 @@
 
     #@29
     .line 523
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mShow:Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mShow:Landroid/com/google/android/gtalkservice/Presence$Show;
 
     #@2b
-    invoke-virtual {v0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence$Show;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/com/google/android/gtalkservice/Presence$Show;->toString()Ljava/lang/String;
 
     #@2e
     move-result-object v0
@@ -878,14 +878,14 @@
 
     #@32
     .line 524
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
 
     #@34
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     #@37
     .line 525
-    iget-boolean v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mInvisible:Z
+    iget-boolean v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mInvisible:Z
 
     #@39
     if-eqz v0, :cond_2
@@ -896,21 +896,21 @@
 
     #@3e
     .line 527
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
 
     #@40
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     #@43
     .line 528
-    iget-object v0, p0, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
+    iget-object v0, p0, Landroid/com/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
 
     #@45
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     #@48
     .line 529
-    invoke-virtual {p0}, Landroid_maps_conflict_avoidance/com/google/android/gtalkservice/Presence;->getCapabilities()I
+    invoke-virtual {p0}, Landroid/com/google/android/gtalkservice/Presence;->getCapabilities()I
 
     #@4b
     move-result v0
