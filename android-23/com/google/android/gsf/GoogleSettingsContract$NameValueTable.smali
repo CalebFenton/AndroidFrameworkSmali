@@ -1,4 +1,4 @@
-.class public Landroid/com/google/android/gsf/GoogleSettingsContract$NameValueTable;
+.class public Lcom/google/android/gsf/GoogleSettingsContract$NameValueTable;
 .super Ljava/lang/Object;
 .source "GoogleSettingsContract.java"
 

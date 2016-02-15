@@ -1,4 +1,4 @@
-.class final Landroid/com/google/android/gsf/LoginData$1;
+.class final Lcom/google/android/gsf/LoginData$1;
 .super Ljava/lang/Object;
 .source "LoginData.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/com/google/android/gsf/LoginData;
+    value = Lcom/google/android/gsf/LoginData;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Landroid/com/google/android/gsf/LoginData;",
+        "Lcom/google/android/gsf/LoginData;",
         ">;"
     }
 .end annotation
@@ -42,20 +42,20 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gsf/LoginData;
+.method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gsf/LoginData;
     .locals 2
     .param p1, "in"    # Landroid/os/Parcel;
 
     #@0
     .prologue
     .line 124
-    new-instance v0, Landroid/com/google/android/gsf/LoginData;
+    new-instance v0, Lcom/google/android/gsf/LoginData;
 
     #@2
     const/4 v1, 0x0
 
     #@3
-    invoke-direct {v0, p1, v1}, Landroid/com/google/android/gsf/LoginData;-><init>(Landroid/os/Parcel;Landroid/com/google/android/gsf/LoginData;)V
+    invoke-direct {v0, p1, v1}, Lcom/google/android/gsf/LoginData;-><init>(Landroid/os/Parcel;Lcom/google/android/gsf/LoginData;)V
 
     #@6
     return-object v0
@@ -68,7 +68,7 @@
     #@0
     .prologue
     .line 123
-    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/LoginData$1;->createFromParcel(Landroid/os/Parcel;)Landroid/com/google/android/gsf/LoginData;
+    invoke-virtual {p0, p1}, Lcom/google/android/gsf/LoginData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gsf/LoginData;
 
     #@3
     move-result-object v0
@@ -77,14 +77,14 @@
     return-object v0
 .end method
 
-.method public newArray(I)[Landroid/com/google/android/gsf/LoginData;
+.method public newArray(I)[Lcom/google/android/gsf/LoginData;
     .locals 1
     .param p1, "size"    # I
 
     #@0
     .prologue
     .line 128
-    new-array v0, p1, [Landroid/com/google/android/gsf/LoginData;
+    new-array v0, p1, [Lcom/google/android/gsf/LoginData;
 
     #@2
     return-object v0
@@ -97,7 +97,7 @@
     #@0
     .prologue
     .line 127
-    invoke-virtual {p0, p1}, Landroid/com/google/android/gsf/LoginData$1;->newArray(I)[Landroid/com/google/android/gsf/LoginData;
+    invoke-virtual {p0, p1}, Lcom/google/android/gsf/LoginData$1;->newArray(I)[Lcom/google/android/gsf/LoginData;
 
     #@3
     move-result-object v0
