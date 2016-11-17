@@ -1,0 +1,83 @@
+.class Landroid/provider/SearchRecentSuggestions$1;
+.super Ljava/lang/Thread;
+.source "SearchRecentSuggestions.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/provider/SearchRecentSuggestions;->saveRecentQuery(Ljava/lang/String;Ljava/lang/String;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Landroid/provider/SearchRecentSuggestions;
+
+.field final synthetic val$line2:Ljava/lang/String;
+
+.field final synthetic val$queryString:Ljava/lang/String;
+
+
+# direct methods
+.method constructor <init>(Landroid/provider/SearchRecentSuggestions;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .param p1, "this$0"    # Landroid/provider/SearchRecentSuggestions;
+    .param p2, "$anonymous0"    # Ljava/lang/String;
+    .param p3, "val$queryString"    # Ljava/lang/String;
+    .param p4, "val$line2"    # Ljava/lang/String;
+
+    #@0
+    .prologue
+    .line 169
+    iput-object p1, p0, Landroid/provider/SearchRecentSuggestions$1;->this$0:Landroid/provider/SearchRecentSuggestions;
+
+    #@2
+    iput-object p3, p0, Landroid/provider/SearchRecentSuggestions$1;->val$queryString:Ljava/lang/String;
+
+    #@4
+    iput-object p4, p0, Landroid/provider/SearchRecentSuggestions$1;->val$line2:Ljava/lang/String;
+
+    #@6
+    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+
+    #@9
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 3
+
+    #@0
+    .prologue
+    .line 172
+    iget-object v0, p0, Landroid/provider/SearchRecentSuggestions$1;->this$0:Landroid/provider/SearchRecentSuggestions;
+
+    #@2
+    iget-object v1, p0, Landroid/provider/SearchRecentSuggestions$1;->val$queryString:Ljava/lang/String;
+
+    #@4
+    iget-object v2, p0, Landroid/provider/SearchRecentSuggestions$1;->val$line2:Ljava/lang/String;
+
+    #@6
+    invoke-static {v0, v1, v2}, Landroid/provider/SearchRecentSuggestions;->-wrap0(Landroid/provider/SearchRecentSuggestions;Ljava/lang/String;Ljava/lang/String;)V
+
+    #@9
+    .line 173
+    invoke-static {}, Landroid/provider/SearchRecentSuggestions;->-get0()Ljava/util/concurrent/Semaphore;
+
+    #@c
+    move-result-object v0
+
+    #@d
+    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
+
+    #@10
+    .line 171
+    return-void
+.end method
