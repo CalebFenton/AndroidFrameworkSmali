@@ -5,7 +5,7 @@ This contains Android frameworks as Smali files to be used as a reference librar
 The building process is simple.
 
 1. Pull framework files off of device (e.g. /system/framework)
-2. Disassemble all the `ODEX` files
+2. Disassemble all the `ODEX` and `OAT` files
 3. Combine disassembly output files into single folder
 
 ### Prerequisites
@@ -16,7 +16,7 @@ The building process is simple.
 ### Instructions
 Once you've satisfied the prerequisites, run this:
 ```
-./make_framework
+./make_reflib
 ```
 
 This will create a folder with the name `android-<version>`.
