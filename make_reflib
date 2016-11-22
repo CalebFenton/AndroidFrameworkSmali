@@ -2,48 +2,51 @@
 mkdir reflib
 cd reflib
 
-echo -n "[*] Android SDK version is ... "
+echo -n "[*] Android SDK version is "
 REFLIB_SDK_VERSION=$(echo $(adb shell getprop ro.build.version.sdk) | sed -e 's/[[:space:]]*$//')
 echo $REFLIB_SDK_VERSION
 REFLIB_PATH="android-$REFLIB_SDK_VERSION"
 
-echo "[*] Pulling framework ..."
+echo "[*] Pulling framework"
 adb pull /system/framework
 
 mkdir $REFLIB_PATH
 
 BOOT_OAT="$(find framework -type f -name 'boot.oat' -print -quit)"
 
-# deodex all odex files
-for i in `find framework/ -name *.odex`; do
-    echo "[*] Disassembling $i ..."
-    baksmali deodex --code-offsets --use-locals --sequential-labels -b $BOOT_OAT $i
+# Disassemble ODEX files
+for i in `find framework -name *.odex`; do
+    echo "[*] Disassembling $i"
+    baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i
 done
 
-# deodex all oat files
-for i in `find framework/ -name *.oat`; do
-    echo "[*] Disassembling $i ..."
-    baksmali deodex --code-offsets --use-locals --sequential-labels -b $BOOT_OAT $i
+# Disassemble OAT files
+for i in `find framework -name *.oat`; do
+    echo "[*] Disassembling $i"
+    baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i
     # deodex extra second dex inside oat if it exists. Not checking for 3rd+ dex.
     # ugly heuristic - baksmali should support returing a list of embedded dex files at some point
+    #x86/boot-framework.oat/classes2.dex
+    #x86_64/boot-framework.oat/classes2.dex
     if grep -q 'classes2.dex' $i; then
-        baksmali deodex --code-offsets --use-locals --sequential-labels -b $BOOT_OAT $i/classes2.dex
+        echo "[*] Disassembling $i/classes2.dex"
+        baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i/classes2.dex
     fi
 done
 
-echo "[*] Moving Smali to $REFLIB_PATH ..."
+echo "[*] Moving Smali to $REFLIB_PATH"
 mv out/* $REFLIB_PATH
 rm -r out/
 
 # Ooo, get you some directory file counts, ooo!
 # for x in `find . -maxdepth 1 -type d | sort`; do y=`find $x | wc -l`; echo $x,$y; done
 
-echo "[*] fix google maps packaging conflict"
+echo "[*] Fix Google maps packaging conflict"
 cd $REFLIB_PATH
 if [ -d "android_maps_conflict_avoidance" ]; then
     cp -r android_maps_conflict_avoidance/* .
     rm -R android_maps_conflict_avoidance/
-    find . -type f -print0 | xargs -0 sed -i 's/Landroid_maps_conflict_avoidance\/com\/google/Lcom\/google/g'
+    find . -type f -print0 | xargs -0 sed -i '' 's/Landroid_maps_conflict_avoidance\/com\/google/Lcom\/google/g'
 fi
 
-echo "[*] Finished."
+echo "[*] Finished"
