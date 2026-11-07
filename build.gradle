@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: Apache-2.0
+plugins {
+    id 'application'
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'com.android.tools.smali:smali-baksmali:3.0.10'
+}
+
+application {
+    applicationName = 'framework-tools'
+    mainClass = 'com.android.tools.smali.baksmali.Main'
+}
