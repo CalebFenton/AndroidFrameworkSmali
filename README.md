@@ -2,6 +2,15 @@
 
 Android framework Smali reference data for [Simplify](https://github.com/CalebFenton/simplify), plus a standalone extractor for modern AOSP emulator images.
 
+## Tracked captures
+
+- `android-36/` contains the verified Android 16 boot classpath: 60,225 classes, 45 original JARs, 49 DEX files, source hashes, image metadata and four original notice files. Its Smali sources are under `android-36/smali/`; it uses the output layout described below.
+- `android-25/` retains the historical Smali corpus in its original layout.
+
+Consumers select a capture explicitly. A recursive checkout includes both; no emulator or generator build is required to use the tracked data.
+
+The API 36 tree contains case-distinct names such as `AudioAttributes.smali` and `Audioattributes.smali`. Check it out on a case-sensitive filesystem (Linux, or case-sensitive APFS on macOS); a default case-insensitive filesystem cannot preserve both definitions.
+
 The tracked `android-25/` corpus is retained unchanged, including all existing packages. Its original image identity, image revision, extraction inputs, and complete licensing provenance are not recorded here. The new extractor does not retroactively establish those facts. Generating a newer corpus does **not** replace `android-25/` or change which framework Simplify loads.
 
 ## Setup
@@ -89,7 +98,7 @@ The device's build properties identify what it reports, not an independently aut
 
 Notice discovery searches `/system`, `/system_ext`, `/product`, `/vendor`, `/odm`, and each active boot-classpath APEX root for notice-named files. Original bytes are mirrored under `notices/`; provenance records searched roots, missing roots or empty searches, source paths, and file hashes. Permission or read failures abort extraction. If access requires root, enable it separately on an emulator you control before extraction; the generator never does so automatically.
 
-`generated/`, `build/`, and `.gradle/` are ignored. Keep generated output local and out of commits; a custom output location outside `generated/` needs its own ignore rule. Nothing automatically selects this output in Simplify. Any future runtime migration requires an explicit integration and compatibility decision.
+`generated/`, `build/`, and `.gradle/` are ignored. Keep trial captures there. To publish a verified capture, move its **entire** output directory to a new `android-<API>/` directory and commit it, including the source inputs, manifests and notices. Never overwrite an existing capture or copy only its Smali files. Updating a consumer's submodule pin does not by itself select a different runtime framework; that requires explicit integration and compatibility checks.
 
 ## Licensing boundaries
 

@@ -1,0 +1,30 @@
+.class public abstract Lcom/android/internal/widget/RecyclerView$ViewCacheExtension;
+.super Ljava/lang/Object;
+.source "RecyclerView.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/widget/RecyclerView;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x409
+    name = "ViewCacheExtension"
+.end annotation
+
+
+# direct methods
+.method public constructor blacklist <init>()V
+    .registers 1
+
+    .line 6318
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract blacklist getViewForPositionAndType(Lcom/android/internal/widget/RecyclerView$Recycler;II)Landroid/view/View;
+.end method

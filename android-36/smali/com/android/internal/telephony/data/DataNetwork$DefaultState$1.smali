@@ -1,0 +1,58 @@
+.class Lcom/android/internal/telephony/data/DataNetwork$DefaultState$1;
+.super Lcom/android/internal/telephony/data/DataConfigManager$DataConfigManagerCallback;
+.source "DataNetwork.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/telephony/data/DataNetwork$DefaultState;->enter()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic blacklist this$1:Lcom/android/internal/telephony/data/DataNetwork$DefaultState;
+
+
+# direct methods
+.method constructor blacklist <init>(Lcom/android/internal/telephony/data/DataNetwork$DefaultState;Ljava/util/concurrent/Executor;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            null,
+            null
+        }
+    .end annotation
+
+    .line 1217
+    iput-object p1, p0, Lcom/android/internal/telephony/data/DataNetwork$DefaultState$1;->this$1:Lcom/android/internal/telephony/data/DataNetwork$DefaultState;
+
+    invoke-direct {p0, p2}, Lcom/android/internal/telephony/data/DataConfigManager$DataConfigManagerCallback;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public blacklist onCarrierConfigChanged()V
+    .registers 2
+
+    .line 1220
+    iget-object p0, p0, Lcom/android/internal/telephony/data/DataNetwork$DefaultState$1;->this$1:Lcom/android/internal/telephony/data/DataNetwork$DefaultState;
+
+    iget-object p0, p0, Lcom/android/internal/telephony/data/DataNetwork$DefaultState;->this$0:Lcom/android/internal/telephony/data/DataNetwork;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/StateMachine;->sendMessage(I)V
+
+    return-void
+.end method

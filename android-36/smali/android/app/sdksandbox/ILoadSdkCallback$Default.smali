@@ -1,0 +1,67 @@
+.class public Landroid/app/sdksandbox/ILoadSdkCallback$Default;
+.super Ljava/lang/Object;
+.source "ILoadSdkCallback.java"
+
+# interfaces
+.implements Landroid/app/sdksandbox/ILoadSdkCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/app/sdksandbox/ILoadSdkCallback;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Default"
+.end annotation
+
+
+# direct methods
+.method public constructor blacklist <init>()V
+    .registers 1
+
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public whitelist asBinder()Landroid/os/IBinder;
+    .registers 2
+
+    .line 24
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public blacklist onLoadSdkFailure(Landroid/app/sdksandbox/LoadSdkException;Landroid/app/sdksandbox/SandboxLatencyInfo;)V
+    .registers 3
+    .param p1, "exception"    # Landroid/app/sdksandbox/LoadSdkException;
+    .param p2, "sandboxLatencyInfo"    # Landroid/app/sdksandbox/SandboxLatencyInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 21
+    return-void
+.end method
+
+.method public blacklist onLoadSdkSuccess(Landroid/app/sdksandbox/SandboxedSdk;Landroid/app/sdksandbox/SandboxLatencyInfo;)V
+    .registers 3
+    .param p1, "sandboxedSdkParcel"    # Landroid/app/sdksandbox/SandboxedSdk;
+    .param p2, "sandboxLatencyInfo"    # Landroid/app/sdksandbox/SandboxLatencyInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 18
+    return-void
+.end method

@@ -1,0 +1,44 @@
+.class public final Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;
+.super Landroid/health/connect/datatypes/ExerciseCompletionGoal;
+.source "ExerciseCompletionGoal.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/health/connect/datatypes/ExerciseCompletionGoal;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "UnknownGoal"
+.end annotation
+
+
+# static fields
+.field public static final whitelist INSTANCE:Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;
+
+
+# direct methods
+.method static constructor blacklist <clinit>()V
+    .registers 1
+
+    .line 291
+    new-instance v0, Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;
+
+    invoke-direct {v0}, Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;-><init>()V
+
+    sput-object v0, Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;->INSTANCE:Landroid/health/connect/datatypes/ExerciseCompletionGoal$UnknownGoal;
+
+    return-void
+.end method
+
+.method private constructor blacklist <init>()V
+    .registers 2
+
+    .line 289
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/health/connect/datatypes/ExerciseCompletionGoal;-><init>(Landroid/health/connect/datatypes/ExerciseCompletionGoal-IA;)V
+
+    return-void
+.end method

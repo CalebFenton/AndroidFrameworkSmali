@@ -1,0 +1,50 @@
+.class public final Landroid/aconfigd/Aconfigd$PersistStorageRecord;
+.super Ljava/lang/Object;
+.source "Aconfigd.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/aconfigd/Aconfigd;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x11
+    name = "PersistStorageRecord"
+.end annotation
+
+
+# static fields
+.field public static final blacklist CONTAINER:J = 0x10900000002L
+
+.field public static final blacklist DIGEST:J = 0x10900000006L
+
+.field public static final blacklist FLAG_INFO:J = 0x10900000007L
+
+.field public static final blacklist FLAG_MAP:J = 0x10900000004L
+
+.field public static final blacklist FLAG_VAL:J = 0x10900000005L
+
+.field public static final blacklist PACKAGE_MAP:J = 0x10900000003L
+
+.field public static final blacklist VERSION:J = 0x10d00000001L
+
+
+# direct methods
+.method public constructor blacklist <init>(Landroid/aconfigd/Aconfigd;)V
+    .registers 2
+    .param p1, "this$0"    # Landroid/aconfigd/Aconfigd;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            null
+        }
+    .end annotation
+
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

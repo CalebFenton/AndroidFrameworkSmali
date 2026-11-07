@@ -1,0 +1,80 @@
+.class Landroid/media/internal/guava_common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;
+.super Ljava/lang/Object;
+.source "ImmutableMapEntrySet.java"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/media/internal/guava_common/collect/ImmutableMapEntrySet;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "EntrySetSerializedForm"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final whitelist serialVersionUID:J
+
+
+# instance fields
+.field final blacklist map:Landroid/media/internal/guava_common/collect/ImmutableMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/media/internal/guava_common/collect/ImmutableMap<",
+            "TK;TV;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method constructor blacklist <init>(Landroid/media/internal/guava_common/collect/ImmutableMap;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/media/internal/guava_common/collect/ImmutableMap<",
+            "TK;TV;>;)V"
+        }
+    .end annotation
+
+    .line 135
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 136
+    iput-object p1, p0, Landroid/media/internal/guava_common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;->map:Landroid/media/internal/guava_common/collect/ImmutableMap;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method whitelist readResolve()Ljava/lang/Object;
+    .registers 1
+
+    .line 140
+    iget-object p0, p0, Landroid/media/internal/guava_common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;->map:Landroid/media/internal/guava_common/collect/ImmutableMap;
+
+    invoke-virtual {p0}, Landroid/media/internal/guava_common/collect/ImmutableMap;->entrySet()Landroid/media/internal/guava_common/collect/ImmutableSet;
+
+    move-result-object p0
+
+    return-object p0
+.end method

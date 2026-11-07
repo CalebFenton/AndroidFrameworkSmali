@@ -1,0 +1,27 @@
+.class interface abstract Lcom/android/internal/net/ipsec/ike/IkeSocket$IPacketReceiver;
+.super Ljava/lang/Object;
+.source "IkeSocket.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/net/ipsec/ike/IkeSocket;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x608
+    name = "IPacketReceiver"
+.end annotation
+
+
+# virtual methods
+.method public abstract blacklist handlePacket([BLandroid/util/LongSparseArray;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([B",
+            "Landroid/util/LongSparseArray<",
+            "Lcom/android/internal/net/ipsec/ike/IkeSocket$Callback;",
+            ">;)V"
+        }
+    .end annotation
+.end method

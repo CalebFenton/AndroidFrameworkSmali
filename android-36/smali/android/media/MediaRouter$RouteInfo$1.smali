@@ -1,0 +1,62 @@
+.class Landroid/media/MediaRouter$RouteInfo$1;
+.super Landroid/media/IRemoteVolumeObserver$Stub;
+.source "MediaRouter.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/media/MediaRouter$RouteInfo;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic blacklist this$0:Landroid/media/MediaRouter$RouteInfo;
+
+
+# direct methods
+.method constructor blacklist <init>(Landroid/media/MediaRouter$RouteInfo;)V
+    .registers 2
+    .param p1, "this$0"    # Landroid/media/MediaRouter$RouteInfo;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            null
+        }
+    .end annotation
+
+    .line 2265
+    iput-object p1, p0, Landroid/media/MediaRouter$RouteInfo$1;->this$0:Landroid/media/MediaRouter$RouteInfo;
+
+    invoke-direct {p0}, Landroid/media/IRemoteVolumeObserver$Stub;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public blacklist dispatchRemoteVolumeUpdate(II)V
+    .registers 5
+    .param p1, "direction"    # I
+    .param p2, "value"    # I
+
+    .line 2268
+    sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
+
+    iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Landroid/media/MediaRouter$RouteInfo$1$1;
+
+    invoke-direct {v1, p0, p1, p2}, Landroid/media/MediaRouter$RouteInfo$1$1;-><init>(Landroid/media/MediaRouter$RouteInfo$1;II)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 2280
+    return-void
+.end method

@@ -1,0 +1,40 @@
+.class Landroid/icu/impl/LocaleDisplayNamesImpl$DataTables$1;
+.super Landroid/icu/impl/LocaleDisplayNamesImpl$DataTables;
+.source "LocaleDisplayNamesImpl.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/icu/impl/LocaleDisplayNamesImpl$DataTables;->load(Ljava/lang/String;)Landroid/icu/impl/LocaleDisplayNamesImpl$DataTables;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# direct methods
+.method constructor blacklist <init>()V
+    .registers 1
+
+    .line 703
+    invoke-direct {p0}, Landroid/icu/impl/LocaleDisplayNamesImpl$DataTables;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public blacklist get(Landroid/icu/util/ULocale;Z)Landroid/icu/impl/LocaleDisplayNamesImpl$DataTable;
+    .registers 4
+    .param p1, "locale"    # Landroid/icu/util/ULocale;
+    .param p2, "nullIfNotFound"    # Z
+
+    .line 706
+    new-instance v0, Landroid/icu/impl/LocaleDisplayNamesImpl$DataTable;
+
+    invoke-direct {v0, p2}, Landroid/icu/impl/LocaleDisplayNamesImpl$DataTable;-><init>(Z)V
+
+    return-object v0
+.end method

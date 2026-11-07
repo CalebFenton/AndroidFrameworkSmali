@@ -1,0 +1,254 @@
+.class public final Landroid/media/internal/exo/extractor/ChunkIndex;
+.super Ljava/lang/Object;
+.source "ChunkIndex.java"
+
+# interfaces
+.implements Landroid/media/internal/exo/extractor/SeekMap;
+
+
+# instance fields
+.field private final blacklist durationUs:J
+
+.field public final blacklist durationsUs:[J
+
+.field public final blacklist length:I
+
+.field public final blacklist offsets:[J
+
+.field public final blacklist sizes:[I
+
+.field public final blacklist timesUs:[J
+
+
+# direct methods
+.method public constructor blacklist <init>([I[J[J[J)V
+    .registers 7
+
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 48
+    iput-object p1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->sizes:[I
+
+    .line 49
+    iput-object p2, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->offsets:[J
+
+    .line 50
+    iput-object p3, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->durationsUs:[J
+
+    .line 51
+    iput-object p4, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->timesUs:[J
+
+    .line 52
+    array-length p1, p1
+
+    iput p1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->length:I
+
+    if-lez p1, :cond_1c
+
+    add-int/lit8 p2, p1, -0x1
+
+    .line 54
+    aget-wide p2, p3, p2
+
+    add-int/lit8 p1, p1, -0x1
+
+    aget-wide v0, p4, p1
+
+    add-long/2addr p2, v0
+
+    iput-wide p2, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->durationUs:J
+
+    return-void
+
+    :cond_1c
+    const-wide/16 p1, 0x0
+
+    .line 56
+    iput-wide p1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->durationUs:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public blacklist getChunkIndex(J)I
+    .registers 4
+
+    .line 67
+    iget-object p0, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->timesUs:[J
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, p1, p2, v0, v0}, Landroid/media/internal/exo/util/Util;->binarySearchFloor([JJZZ)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public blacklist getDurationUs()J
+    .registers 3
+
+    .line 79
+    iget-wide v0, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->durationUs:J
+
+    return-wide v0
+.end method
+
+.method public blacklist getSeekPoints(J)Landroid/media/internal/exo/extractor/SeekMap$SeekPoints;
+    .registers 9
+
+    .line 84
+    invoke-virtual {p0, p1, p2}, Landroid/media/internal/exo/extractor/ChunkIndex;->getChunkIndex(J)I
+
+    move-result v0
+
+    .line 85
+    new-instance v1, Landroid/media/internal/exo/extractor/SeekPoint;
+
+    iget-object v2, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->timesUs:[J
+
+    aget-wide v2, v2, v0
+
+    iget-object v4, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->offsets:[J
+
+    aget-wide v4, v4, v0
+
+    invoke-direct {v1, v2, v3, v4, v5}, Landroid/media/internal/exo/extractor/SeekPoint;-><init>(JJ)V
+
+    .line 86
+    iget-wide v2, v1, Landroid/media/internal/exo/extractor/SeekPoint;->timeUs:J
+
+    cmp-long p1, v2, p1
+
+    if-gez p1, :cond_33
+
+    iget p1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->length:I
+
+    add-int/lit8 p1, p1, -0x1
+
+    if-ne v0, p1, :cond_1e
+
+    goto :goto_33
+
+    .line 89
+    :cond_1e
+    new-instance p1, Landroid/media/internal/exo/extractor/SeekPoint;
+
+    iget-object p2, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->timesUs:[J
+
+    add-int/lit8 v0, v0, 0x1
+
+    aget-wide v2, p2, v0
+
+    iget-object p0, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->offsets:[J
+
+    aget-wide v4, p0, v0
+
+    invoke-direct {p1, v2, v3, v4, v5}, Landroid/media/internal/exo/extractor/SeekPoint;-><init>(JJ)V
+
+    .line 90
+    new-instance p0, Landroid/media/internal/exo/extractor/SeekMap$SeekPoints;
+
+    invoke-direct {p0, v1, p1}, Landroid/media/internal/exo/extractor/SeekMap$SeekPoints;-><init>(Landroid/media/internal/exo/extractor/SeekPoint;Landroid/media/internal/exo/extractor/SeekPoint;)V
+
+    return-object p0
+
+    .line 87
+    :cond_33
+    :goto_33
+    new-instance p0, Landroid/media/internal/exo/extractor/SeekMap$SeekPoints;
+
+    invoke-direct {p0, v1}, Landroid/media/internal/exo/extractor/SeekMap$SeekPoints;-><init>(Landroid/media/internal/exo/extractor/SeekPoint;)V
+
+    return-object p0
+.end method
+
+.method public blacklist isSeekable()Z
+    .registers 1
+
+    .line 0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public whitelist test-api toString()Ljava/lang/String;
+    .registers 3
+
+    .line 96
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "ChunkIndex(length="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->length:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", sizes="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->sizes:[I
+
+    .line 100
+    invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", offsets="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->offsets:[J
+
+    .line 102
+    invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", timeUs="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->timesUs:[J
+
+    .line 104
+    invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", durationsUs="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Landroid/media/internal/exo/extractor/ChunkIndex;->durationsUs:[J
+
+    .line 106
+    invoke-static {p0}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method

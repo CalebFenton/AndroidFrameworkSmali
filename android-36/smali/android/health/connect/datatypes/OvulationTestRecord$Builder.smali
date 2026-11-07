@@ -1,0 +1,145 @@
+.class public final Landroid/health/connect/datatypes/OvulationTestRecord$Builder;
+.super Ljava/lang/Object;
+.source "OvulationTestRecord.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/health/connect/datatypes/OvulationTestRecord;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Builder"
+.end annotation
+
+
+# instance fields
+.field private final blacklist mMetadata:Landroid/health/connect/datatypes/Metadata;
+
+.field private final blacklist mResult:I
+
+.field private final blacklist mTime:Ljava/time/Instant;
+
+.field private blacklist mZoneOffset:Ljava/time/ZoneOffset;
+
+
+# direct methods
+.method public constructor whitelist <init>(Landroid/health/connect/datatypes/Metadata;Ljava/time/Instant;I)V
+    .registers 5
+    .param p1, "metadata"    # Landroid/health/connect/datatypes/Metadata;
+    .param p2, "time"    # Ljava/time/Instant;
+    .param p3, "result"    # I
+
+    .line 148
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 149
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 150
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 151
+    iput-object p1, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mMetadata:Landroid/health/connect/datatypes/Metadata;
+
+    .line 152
+    iput-object p2, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mTime:Ljava/time/Instant;
+
+    .line 153
+    iput p3, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mResult:I
+
+    .line 154
+    invoke-static {}, Ljava/time/ZoneOffset;->systemDefault()Ljava/time/ZoneId;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/time/ZoneId;->getRules()Ljava/time/zone/ZoneRules;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/time/zone/ZoneRules;->getOffset(Ljava/time/Instant;)Ljava/time/ZoneOffset;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mZoneOffset:Ljava/time/ZoneOffset;
+
+    .line 155
+    return-void
+.end method
+
+
+# virtual methods
+.method public whitelist build()Landroid/health/connect/datatypes/OvulationTestRecord;
+    .registers 8
+
+    .line 186
+    new-instance v0, Landroid/health/connect/datatypes/OvulationTestRecord;
+
+    iget-object v1, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mMetadata:Landroid/health/connect/datatypes/Metadata;
+
+    iget-object v2, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mTime:Ljava/time/Instant;
+
+    iget-object v3, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mZoneOffset:Ljava/time/ZoneOffset;
+
+    iget v4, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mResult:I
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-direct/range {v0 .. v6}, Landroid/health/connect/datatypes/OvulationTestRecord;-><init>(Landroid/health/connect/datatypes/Metadata;Ljava/time/Instant;Ljava/time/ZoneOffset;IZLandroid/health/connect/datatypes/OvulationTestRecord-IA;)V
+
+    return-object v0
+.end method
+
+.method public blacklist buildWithoutValidation()Landroid/health/connect/datatypes/OvulationTestRecord;
+    .registers 8
+
+    .line 178
+    new-instance v0, Landroid/health/connect/datatypes/OvulationTestRecord;
+
+    iget-object v1, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mMetadata:Landroid/health/connect/datatypes/Metadata;
+
+    iget-object v2, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mTime:Ljava/time/Instant;
+
+    iget-object v3, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mZoneOffset:Ljava/time/ZoneOffset;
+
+    iget v4, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mResult:I
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-direct/range {v0 .. v6}, Landroid/health/connect/datatypes/OvulationTestRecord;-><init>(Landroid/health/connect/datatypes/Metadata;Ljava/time/Instant;Ljava/time/ZoneOffset;IZLandroid/health/connect/datatypes/OvulationTestRecord-IA;)V
+
+    return-object v0
+.end method
+
+.method public whitelist clearZoneOffset()Landroid/health/connect/datatypes/OvulationTestRecord$Builder;
+    .registers 2
+
+    .line 168
+    invoke-static {}, Landroid/health/connect/datatypes/RecordUtils;->getDefaultZoneOffset()Ljava/time/ZoneOffset;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mZoneOffset:Ljava/time/ZoneOffset;
+
+    .line 169
+    return-object p0
+.end method
+
+.method public whitelist setZoneOffset(Ljava/time/ZoneOffset;)Landroid/health/connect/datatypes/OvulationTestRecord$Builder;
+    .registers 2
+    .param p1, "zoneOffset"    # Ljava/time/ZoneOffset;
+
+    .line 160
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 161
+    iput-object p1, p0, Landroid/health/connect/datatypes/OvulationTestRecord$Builder;->mZoneOffset:Ljava/time/ZoneOffset;
+
+    .line 162
+    return-object p0
+.end method

@@ -58,5 +58,17 @@ The notice inventory may cover components beyond the extracted boot classpath;
 it is not a complete component-to-source inventory. Keep applicable original
 licenses, notices and source-availability obligations with redistributed
 components. The project license does not supply rights to the whole SDK or
-emulator image. Generated artifacts are local, ignored build data and are not
-implicitly selected by Simplify.
+emulator image.
+
+Tracked android-36 capture
+--------------------------
+android-36/ contains the verified Android 16 boot classpath from
+system-images;android-36;default;x86_64 revision 2, fingerprint:
+Android/sdk_phone64_x86_64/emu64x:16/BE2A.250530.026.D1/13818094:userdebug/test-keys
+
+Original JARs and DEX files, class/source hashes, image/tool metadata and the
+original notices are retained in that directory. Consult provenance.json,
+boot-dex.tsv, classes.tsv and notices/. These are Android and third-party
+materials under their original terms, not relicensed project-owned code.
+Trial captures under generated/ remain ignored; consumers select a tracked
+capture explicitly.

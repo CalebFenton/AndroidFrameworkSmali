@@ -1,0 +1,293 @@
+.class public Landroid/hardware/input/VirtualMouse;
+.super Landroid/hardware/input/VirtualInputDevice;
+.source "VirtualMouse.java"
+
+
+# annotations
+.annotation runtime Landroid/annotation/SystemApi;
+.end annotation
+
+
+# direct methods
+.method public constructor blacklist <init>(Landroid/hardware/input/VirtualMouseConfig;Landroid/companion/virtual/IVirtualDevice;Landroid/os/IBinder;)V
+    .registers 4
+    .param p1, "config"    # Landroid/hardware/input/VirtualMouseConfig;
+    .param p2, "virtualDevice"    # Landroid/companion/virtual/IVirtualDevice;
+    .param p3, "token"    # Landroid/os/IBinder;
+
+    .line 42
+    invoke-direct {p0, p1, p2, p3}, Landroid/hardware/input/VirtualInputDevice;-><init>(Landroid/hardware/input/VirtualInputDeviceConfig;Landroid/companion/virtual/IVirtualDevice;Landroid/os/IBinder;)V
+
+    .line 43
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic whitelist test-api close()V
+    .registers 1
+
+    .line 37
+    invoke-super {p0}, Landroid/hardware/input/VirtualInputDevice;->close()V
+
+    return-void
+.end method
+
+.method public whitelist getCursorPosition()Landroid/graphics/PointF;
+    .registers 3
+
+    .line 109
+    :try_start_0
+    iget-object v0, p0, Landroid/hardware/input/VirtualMouse;->mVirtualDevice:Landroid/companion/virtual/IVirtualDevice;
+
+    iget-object v1, p0, Landroid/hardware/input/VirtualMouse;->mToken:Landroid/os/IBinder;
+
+    invoke-interface {v0, v1}, Landroid/companion/virtual/IVirtualDevice;->getCursorPosition(Landroid/os/IBinder;)Landroid/graphics/PointF;
+
+    move-result-object v0
+    :try_end_8
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_8} :catch_9
+
+    return-object v0
+
+    .line 110
+    :catch_9
+    move-exception v0
+
+    .line 111
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+.end method
+
+.method public bridge synthetic blacklist getInputDeviceId()I
+    .registers 2
+
+    .line 37
+    invoke-super {p0}, Landroid/hardware/input/VirtualInputDevice;->getInputDeviceId()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public whitelist sendButtonEvent(Landroid/hardware/input/VirtualMouseButtonEvent;)V
+    .registers 5
+    .param p1, "event"    # Landroid/hardware/input/VirtualMouseButtonEvent;
+
+    .line 54
+    :try_start_0
+    iget-object v0, p0, Landroid/hardware/input/VirtualMouse;->mVirtualDevice:Landroid/companion/virtual/IVirtualDevice;
+
+    iget-object v1, p0, Landroid/hardware/input/VirtualMouse;->mToken:Landroid/os/IBinder;
+
+    invoke-interface {v0, v1, p1}, Landroid/companion/virtual/IVirtualDevice;->sendButtonEvent(Landroid/os/IBinder;Landroid/hardware/input/VirtualMouseButtonEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_28
+
+    .line 55
+    const-string v0, "VirtualInputDevice"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to send button event to virtual mouse "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/hardware/input/VirtualMouse;->mConfig:Landroid/hardware/input/VirtualInputDeviceConfig;
+
+    .line 56
+    invoke-virtual {v2}, Landroid/hardware/input/VirtualInputDeviceConfig;->getInputDeviceName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 55
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_28
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_28} :catch_2a
+
+    .line 60
+    :cond_28
+    nop
+
+    .line 61
+    return-void
+
+    .line 58
+    :catch_2a
+    move-exception v0
+
+    .line 59
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+.end method
+
+.method public whitelist sendRelativeEvent(Landroid/hardware/input/VirtualMouseRelativeEvent;)V
+    .registers 5
+    .param p1, "event"    # Landroid/hardware/input/VirtualMouseRelativeEvent;
+
+    .line 91
+    :try_start_0
+    iget-object v0, p0, Landroid/hardware/input/VirtualMouse;->mVirtualDevice:Landroid/companion/virtual/IVirtualDevice;
+
+    iget-object v1, p0, Landroid/hardware/input/VirtualMouse;->mToken:Landroid/os/IBinder;
+
+    invoke-interface {v0, v1, p1}, Landroid/companion/virtual/IVirtualDevice;->sendRelativeEvent(Landroid/os/IBinder;Landroid/hardware/input/VirtualMouseRelativeEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_28
+
+    .line 92
+    const-string v0, "VirtualInputDevice"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to send relative event to virtual mouse "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/hardware/input/VirtualMouse;->mConfig:Landroid/hardware/input/VirtualInputDeviceConfig;
+
+    .line 93
+    invoke-virtual {v2}, Landroid/hardware/input/VirtualInputDeviceConfig;->getInputDeviceName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 92
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_28
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_28} :catch_2a
+
+    .line 97
+    :cond_28
+    nop
+
+    .line 98
+    return-void
+
+    .line 95
+    :catch_2a
+    move-exception v0
+
+    .line 96
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+.end method
+
+.method public whitelist sendScrollEvent(Landroid/hardware/input/VirtualMouseScrollEvent;)V
+    .registers 5
+    .param p1, "event"    # Landroid/hardware/input/VirtualMouseScrollEvent;
+
+    .line 73
+    :try_start_0
+    iget-object v0, p0, Landroid/hardware/input/VirtualMouse;->mVirtualDevice:Landroid/companion/virtual/IVirtualDevice;
+
+    iget-object v1, p0, Landroid/hardware/input/VirtualMouse;->mToken:Landroid/os/IBinder;
+
+    invoke-interface {v0, v1, p1}, Landroid/companion/virtual/IVirtualDevice;->sendScrollEvent(Landroid/os/IBinder;Landroid/hardware/input/VirtualMouseScrollEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_28
+
+    .line 74
+    const-string v0, "VirtualInputDevice"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to send scroll event to virtual mouse "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/hardware/input/VirtualMouse;->mConfig:Landroid/hardware/input/VirtualInputDeviceConfig;
+
+    .line 75
+    invoke-virtual {v2}, Landroid/hardware/input/VirtualInputDeviceConfig;->getInputDeviceName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 74
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_28
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_28} :catch_2a
+
+    .line 79
+    :cond_28
+    nop
+
+    .line 80
+    return-void
+
+    .line 77
+    :catch_2a
+    move-exception v0
+
+    .line 78
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+.end method
+
+.method public bridge synthetic whitelist test-api toString()Ljava/lang/String;
+    .registers 2
+
+    .line 37
+    invoke-super {p0}, Landroid/hardware/input/VirtualInputDevice;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

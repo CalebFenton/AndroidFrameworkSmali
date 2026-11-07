@@ -1,0 +1,36 @@
+.class public final synthetic Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic blacklist f$0:Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;
+
+
+# direct methods
+.method public synthetic constructor blacklist <init>(Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy$$ExternalSyntheticLambda2;->f$0:Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final whitelist test-api run()V
+    .registers 2
+
+    .line 0
+    iget-object v0, p0, Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy$$ExternalSyntheticLambda2;->f$0:Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;
+
+    invoke-static {v0}, Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;->$r8$lambda$F0x5yS35JQJU0sm1VOcRYnmIr0I(Landroid/net/wifi/aware/WifiAwareManager$WifiAwareEventCallbackProxy;)V
+
+    return-void
+.end method

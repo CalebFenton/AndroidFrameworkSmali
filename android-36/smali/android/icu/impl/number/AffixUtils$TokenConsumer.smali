@@ -1,0 +1,19 @@
+.class public interface abstract Landroid/icu/impl/number/AffixUtils$TokenConsumer;
+.super Ljava/lang/Object;
+.source "AffixUtils.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/icu/impl/number/AffixUtils;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "TokenConsumer"
+.end annotation
+
+
+# virtual methods
+.method public abstract blacklist consumeToken(I)V
+.end method

@@ -1,0 +1,19 @@
+.class public interface abstract Landroid/net/wifi/WifiManager$SuggestionConnectionStatusListener;
+.super Ljava/lang/Object;
+.source "WifiManager.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/net/wifi/WifiManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "SuggestionConnectionStatusListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract whitelist onConnectionStatus(Landroid/net/wifi/WifiNetworkSuggestion;I)V
+.end method

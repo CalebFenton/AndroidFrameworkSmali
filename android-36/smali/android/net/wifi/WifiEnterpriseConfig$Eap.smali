@@ -1,0 +1,80 @@
+.class public final Landroid/net/wifi/WifiEnterpriseConfig$Eap;
+.super Ljava/lang/Object;
+.source "WifiEnterpriseConfig.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/net/wifi/WifiEnterpriseConfig;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Eap"
+.end annotation
+
+
+# static fields
+.field public static final whitelist AKA:I = 0x5
+
+.field public static final whitelist AKA_PRIME:I = 0x6
+
+.field public static final whitelist NONE:I = -0x1
+
+.field public static final whitelist PEAP:I = 0x0
+
+.field public static final whitelist PWD:I = 0x3
+
+.field public static final whitelist SIM:I = 0x4
+
+.field public static final whitelist TLS:I = 0x1
+
+.field public static final whitelist TTLS:I = 0x2
+
+.field public static final whitelist UNAUTH_TLS:I = 0x7
+
+.field public static final whitelist WAPI_CERT:I = 0x8
+
+.field public static final greylist-max-o strings:[Ljava/lang/String;
+
+
+# direct methods
+.method static constructor blacklist <clinit>()V
+    .registers 9
+
+    .line 667
+    const-string v7, "WFA-UNAUTH-TLS"
+
+    const-string v8, "WAPI_CERT"
+
+    const-string v0, "PEAP"
+
+    const-string v1, "TLS"
+
+    const-string v2, "TTLS"
+
+    const-string v3, "PWD"
+
+    const-string v4, "SIM"
+
+    const-string v5, "AKA"
+
+    const-string v6, "AKA\'"
+
+    filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/net/wifi/WifiEnterpriseConfig$Eap;->strings:[Ljava/lang/String;
+
+    return-void
+.end method
+
+.method private constructor greylist-max-o <init>()V
+    .registers 1
+
+    .line 672
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

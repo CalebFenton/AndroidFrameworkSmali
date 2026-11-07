@@ -1,0 +1,21 @@
+.class public interface abstract annotation Landroid/uwb/RangingMeasurement$MeasurementFocus;
+.super Ljava/lang/Object;
+.source "RangingMeasurement.java"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/uwb/RangingMeasurement;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x2609
+    name = "MeasurementFocus"
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->SOURCE:Ljava/lang/annotation/RetentionPolicy;
+.end annotation

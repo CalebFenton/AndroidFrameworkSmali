@@ -1,0 +1,40 @@
+.class public final Landroid/internal/configinfra/aconfigd/x/Aconfigd$StorageRequestMessage$ResetStorageMessage;
+.super Ljava/lang/Object;
+.source "Aconfigd.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/internal/configinfra/aconfigd/x/Aconfigd$StorageRequestMessage;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x11
+    name = "ResetStorageMessage"
+.end annotation
+
+
+# static fields
+.field public static final blacklist ALL:J = 0x10800000001L
+
+.field public static final blacklist CONTAINER:J = 0x10900000002L
+
+
+# direct methods
+.method public constructor blacklist <init>(Landroid/internal/configinfra/aconfigd/x/Aconfigd$StorageRequestMessage;)V
+    .registers 2
+    .param p1, "this$1"    # Landroid/internal/configinfra/aconfigd/x/Aconfigd$StorageRequestMessage;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            null
+        }
+    .end annotation
+
+    .line 154
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

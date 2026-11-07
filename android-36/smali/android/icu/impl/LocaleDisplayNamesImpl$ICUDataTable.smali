@@ -1,0 +1,95 @@
+.class Landroid/icu/impl/LocaleDisplayNamesImpl$ICUDataTable;
+.super Landroid/icu/impl/LocaleDisplayNamesImpl$DataTable;
+.source "LocaleDisplayNamesImpl.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/icu/impl/LocaleDisplayNamesImpl;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "ICUDataTable"
+.end annotation
+
+
+# instance fields
+.field private final blacklist bundle:Landroid/icu/impl/ICUResourceBundle;
+
+
+# direct methods
+.method public constructor blacklist <init>(Ljava/lang/String;Landroid/icu/util/ULocale;Z)V
+    .registers 5
+    .param p1, "path"    # Ljava/lang/String;
+    .param p2, "locale"    # Landroid/icu/util/ULocale;
+    .param p3, "nullIfNotFound"    # Z
+
+    .line 680
+    invoke-direct {p0, p3}, Landroid/icu/impl/LocaleDisplayNamesImpl$DataTable;-><init>(Z)V
+
+    .line 681
+    nop
+
+    .line 682
+    invoke-virtual {p2}, Landroid/icu/util/ULocale;->getBaseName()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 681
+    invoke-static {p1, v0}, Landroid/icu/util/UResourceBundle;->getBundleInstance(Ljava/lang/String;Ljava/lang/String;)Landroid/icu/util/UResourceBundle;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/icu/impl/ICUResourceBundle;
+
+    iput-object v0, p0, Landroid/icu/impl/LocaleDisplayNamesImpl$ICUDataTable;->bundle:Landroid/icu/impl/ICUResourceBundle;
+
+    .line 683
+    return-void
+.end method
+
+
+# virtual methods
+.method public blacklist get(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 6
+    .param p1, "tableName"    # Ljava/lang/String;
+    .param p2, "subTableName"    # Ljava/lang/String;
+    .param p3, "code"    # Ljava/lang/String;
+
+    .line 692
+    iget-object v0, p0, Landroid/icu/impl/LocaleDisplayNamesImpl$ICUDataTable;->bundle:Landroid/icu/impl/ICUResourceBundle;
+
+    .line 693
+    iget-boolean v1, p0, Landroid/icu/impl/LocaleDisplayNamesImpl$ICUDataTable;->nullIfNotFound:Z
+
+    if-eqz v1, :cond_8
+
+    const/4 v1, 0x0
+
+    goto :goto_9
+
+    :cond_8
+    move-object v1, p3
+
+    .line 692
+    :goto_9
+    invoke-static {v0, p1, p2, p3, v1}, Landroid/icu/impl/ICUResourceTableAccess;->getTableString(Landroid/icu/impl/ICUResourceBundle;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public blacklist getLocale()Landroid/icu/util/ULocale;
+    .registers 2
+
+    .line 687
+    iget-object v0, p0, Landroid/icu/impl/LocaleDisplayNamesImpl$ICUDataTable;->bundle:Landroid/icu/impl/ICUResourceBundle;
+
+    invoke-virtual {v0}, Landroid/icu/impl/ICUResourceBundle;->getULocale()Landroid/icu/util/ULocale;
+
+    move-result-object v0
+
+    return-object v0
+.end method

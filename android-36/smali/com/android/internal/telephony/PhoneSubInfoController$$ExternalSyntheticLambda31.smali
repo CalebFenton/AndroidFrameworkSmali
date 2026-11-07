@@ -1,0 +1,30 @@
+.class public final synthetic Lcom/android/internal/telephony/PhoneSubInfoController$$ExternalSyntheticLambda31;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Lcom/android/internal/telephony/PhoneSubInfoController$PermissionCheckHelper;
+
+
+# direct methods
+.method public synthetic constructor blacklist <init>()V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final blacklist checkPermission(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 6
+
+    .line 0
+    invoke-static {p1, p2, p3, p4, p5}, Lcom/android/internal/telephony/PhoneSubInfoController;->$r8$lambda$1FGsLj_Esg0Nty_7ZkJYsf1t3zk(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result p0
+
+    return p0
+.end method

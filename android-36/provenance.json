@@ -1,0 +1,329 @@
+{
+  "abi": "x86_64",
+  "abi_list": [
+    "x86_64"
+  ],
+  "android_api": 36,
+  "bootclasspath": [
+    "/apex/com.android.art/javalib/core-oj.jar",
+    "/apex/com.android.art/javalib/core-libart.jar",
+    "/apex/com.android.art/javalib/okhttp.jar",
+    "/apex/com.android.art/javalib/bouncycastle.jar",
+    "/apex/com.android.art/javalib/apache-xml.jar",
+    "/system/framework/framework.jar",
+    "/system/framework/framework-graphics.jar",
+    "/system/framework/framework-location.jar",
+    "/system/framework/ext.jar",
+    "/system/framework/telephony-common.jar",
+    "/system/framework/voip-common.jar",
+    "/system/framework/ims-common.jar",
+    "/system/framework/framework-ondeviceintelligence-platform.jar",
+    "/apex/com.android.i18n/javalib/core-icu4j.jar",
+    "/apex/com.android.adservices/javalib/framework-adservices.jar",
+    "/apex/com.android.adservices/javalib/framework-sdksandbox.jar",
+    "/apex/com.android.appsearch/javalib/framework-appsearch.jar",
+    "/apex/com.android.bt/javalib/framework-bluetooth.jar",
+    "/apex/com.android.configinfrastructure/javalib/framework-configinfrastructure.jar",
+    "/apex/com.android.conscrypt/javalib/conscrypt.jar",
+    "/apex/com.android.crashrecovery/javalib/framework-crashrecovery.jar",
+    "/apex/com.android.devicelock/javalib/framework-devicelock.jar",
+    "/apex/com.android.healthfitness/javalib/framework-healthfitness.jar",
+    "/apex/com.android.ipsec/javalib/android.net.ipsec.ike.jar",
+    "/apex/com.android.media/javalib/updatable-media.jar",
+    "/apex/com.android.mediaprovider/javalib/framework-mediaprovider.jar",
+    "/apex/com.android.mediaprovider/javalib/framework-pdf.jar",
+    "/apex/com.android.mediaprovider/javalib/framework-pdf-v.jar",
+    "/apex/com.android.mediaprovider/javalib/framework-photopicker.jar",
+    "/apex/com.android.nfcservices/javalib/framework-nfc.jar",
+    "/apex/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar",
+    "/apex/com.android.os.statsd/javalib/framework-statsd.jar",
+    "/apex/com.android.permission/javalib/framework-permission.jar",
+    "/apex/com.android.permission/javalib/framework-permission-s.jar",
+    "/apex/com.android.profiling/javalib/framework-profiling.jar",
+    "/apex/com.android.scheduling/javalib/framework-scheduling.jar",
+    "/apex/com.android.sdkext/javalib/framework-sdkextensions.jar",
+    "/apex/com.android.tethering/javalib/framework-connectivity.jar",
+    "/apex/com.android.tethering/javalib/framework-connectivity-b.jar",
+    "/apex/com.android.tethering/javalib/framework-connectivity-t.jar",
+    "/apex/com.android.tethering/javalib/framework-tethering.jar",
+    "/apex/com.android.uwb/javalib/framework-ranging.jar",
+    "/apex/com.android.uwb/javalib/framework-uwb.jar",
+    "/apex/com.android.virt/javalib/framework-virtualization.jar",
+    "/apex/com.android.wifi/javalib/framework-wifi.jar"
+  ],
+  "build_fingerprint": "Android/sdk_phone64_x86_64/emu64x:16/BE2A.250530.026.D1/13818094:userdebug/test-keys",
+  "build_id": "BE2A.250530.026.D1",
+  "format": 1,
+  "notices": {
+    "files": [
+      {
+        "path": "notices/product/etc/NOTICE.xml.gz",
+        "sha256": "4c0cec79e061f180a3b11c82d65c5241a8b8039ab8252accbb71881d7ab5edd5",
+        "source": "/product/etc/NOTICE.xml.gz"
+      },
+      {
+        "path": "notices/system/etc/NOTICE.xml.gz",
+        "sha256": "74a4a0adb67ca03b30754faf656e1aa9a61dc96e19d149db5c42db0d10f96227",
+        "source": "/system/etc/NOTICE.xml.gz"
+      },
+      {
+        "path": "notices/system_ext/etc/NOTICE.xml.gz",
+        "sha256": "17915931620cae05642ab2735e679d2de99f59d3a81d49e836e755ef29158fc2",
+        "source": "/system_ext/etc/NOTICE.xml.gz"
+      },
+      {
+        "path": "notices/vendor/etc/NOTICE.xml.gz",
+        "sha256": "8ce7727452ce633a92b8831e2b48a818068e50b5c795b25ccd50124d5827a7cb",
+        "source": "/vendor/etc/NOTICE.xml.gz"
+      }
+    ],
+    "missing_is_not_a_license_grant": true,
+    "searches": [
+      {
+        "count": 0,
+        "root": "/apex/com.android.adservices",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.appsearch",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.art",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.bt",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.configinfrastructure",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.conscrypt",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.crashrecovery",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.devicelock",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.healthfitness",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.i18n",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.ipsec",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.media",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.mediaprovider",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.nfcservices",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.ondevicepersonalization",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.os.statsd",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.permission",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.profiling",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.scheduling",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.sdkext",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.tethering",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.uwb",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.virt",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/apex/com.android.wifi",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 0,
+        "root": "/odm",
+        "status": "no_notice_files"
+      },
+      {
+        "count": 1,
+        "root": "/product",
+        "status": "found"
+      },
+      {
+        "count": 1,
+        "root": "/system",
+        "status": "found"
+      },
+      {
+        "count": 1,
+        "root": "/system_ext",
+        "status": "found"
+      },
+      {
+        "count": 1,
+        "root": "/vendor",
+        "status": "found"
+      }
+    ]
+  },
+  "security_patch": "2025-07-05",
+  "source_image": {
+    "docker": {
+      "architecture": "amd64",
+      "id": "sha256:b09785c063d99441aa7ea756fe81d102251bf1ad342fe426da3b4fbff13059c2",
+      "os": "linux",
+      "repo_digests": []
+    },
+    "sdk_manifest": {
+      "sha256": "f176c5870efbd45559623e2e0338a998699690e497d1b0c25a38e049ebded7d6",
+      "source": "/opt/sdk-manifest.txt",
+      "status": "available",
+      "system_images": [
+        "system-images;android-36;default;x86_64 | 2       | Intel x86 Atom_64 System Image    | system-images/android-36/default/x86_64"
+      ]
+    },
+    "status": "available"
+  },
+  "tools": {
+    "adb": {
+      "name": "adb",
+      "sha256": "a902be8f45c6c62e76c9efaf6947a0fa747c9cabd89a2ac8e0d16ecb30b3ed01",
+      "version": "Android Debug Bridge version 1.0.41\nVersion 37.0.1-15733141"
+    },
+    "baksmali": {
+      "artifacts": [
+        {
+          "name": "checker-qual-3.12.0.jar",
+          "sha256": "ff10785ac2a357ec5de9c293cb982a2cbb605c0309ea4cc1cb9b9bc6dbe7f3cb"
+        },
+        {
+          "name": "error_prone_annotations-2.11.0.jar",
+          "sha256": "721cb91842b46fa056847d104d5225c8b8e1e8b62263b993051e1e5a0137b7ec"
+        },
+        {
+          "name": "failureaccess-1.0.1.jar",
+          "sha256": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26"
+        },
+        {
+          "name": "framework-tools.jar",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3"
+        },
+        {
+          "name": "guava-31.1-android.jar",
+          "sha256": "32ac2ed709d96d278b5d2e3e5cea178fa4939939c525fb647532f013308db309"
+        },
+        {
+          "name": "j2objc-annotations-1.3.jar",
+          "sha256": "21af30c92267bd6122c0e0b4d20cccb6641a37eaf956c6540ec471d584e64a7b"
+        },
+        {
+          "name": "jcommander-1.85.jar",
+          "sha256": "fa7552d2831a2b20778d86851d093edca68fbc0a77f792b6223110e4fae67a70"
+        },
+        {
+          "name": "jsr305-3.0.2.jar",
+          "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7"
+        },
+        {
+          "name": "listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+          "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99"
+        },
+        {
+          "name": "smali-baksmali-3.0.10.jar",
+          "sha256": "7d6578dfe5c44f1984b64268e91834432b0942d49e08186a501039dd92b58213"
+        },
+        {
+          "name": "smali-dexlib2-3.0.10.jar",
+          "sha256": "688dee6a46962a4dd1774b64be926534b0b6504bfd5d5c9f89c0f5af284f50c1"
+        },
+        {
+          "name": "smali-util-3.0.10.jar",
+          "sha256": "cc2ef8349765644e4b15371f2c9f77d69b5412a094a38fe5fd992a124b7322fe"
+        }
+      ],
+      "launcher": {
+        "name": "framework-tools",
+        "sha256": "716fa06448aacf364f517bbb61d33f3699e2c0e0fdbd6991f36c25634ac8e8e9"
+      },
+      "version": "3.0.10"
+    },
+    "docker": {
+      "name": "docker",
+      "sha256": "b6f5521ba1c355ea6f8943241435f494963b0840388543b2fca1a4062913da8f",
+      "version": "Docker version 29.9.2, build a82e528"
+    },
+    "generator": {
+      "name": "make_reflib",
+      "sha256": "ba715667a9111996a2358ddee54ffaebe69673d97f47d395bb68ac56d63508e8"
+    },
+    "java": {
+      "name": "java",
+      "sha256": "635baf419576ec4ad4f785014283fb93f1be1103e6d02252f7a00517f0e2a245",
+      "version": "21.0.12.1"
+    },
+    "python": {
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "version": "3.12.3"
+    }
+  }
+}
