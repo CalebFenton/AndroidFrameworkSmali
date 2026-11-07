@@ -1,52 +1,368 @@
-#!/bin/bash
-mkdir reflib
-cd reflib
+#!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
+"""Extract a booted Android device's ordered boot classpath without rewriting classes."""
 
-echo -n "[*] Android SDK version is "
-REFLIB_SDK_VERSION=$(echo $(adb shell getprop ro.build.version.sdk) | sed -e 's/[[:space:]]*$//')
-echo $REFLIB_SDK_VERSION
-REFLIB_PATH="android-$REFLIB_SDK_VERSION"
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shlex
+import shutil
+import struct
+import subprocess
+import sys
+import tempfile
+import zipfile
 
-echo "[*] Pulling framework"
-adb pull /system/framework
 
-mkdir $REFLIB_PATH
+class ExtractionError(Exception):
+    pass
 
-BOOT_OAT="$(find framework -type f -name 'boot.oat' -print -quit)"
 
-# Disassemble ODEX files
-for i in `find framework -name *.odex`; do
-    echo "[*] Disassembling $i"
-    baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i
-done
+def sha256(path):
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
-# Disassemble OAT files
-for i in `find framework -name *.oat`; do
-    echo "[*] Disassembling $i"
-    baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i
-    # deodex extra second dex inside oat if it exists. Not checking for 3rd+ dex.
-    # ugly heuristic - baksmali should support returing a list of embedded dex files at some point
-    #x86/boot-framework.oat/classes2.dex
-    #x86_64/boot-framework.oat/classes2.dex
-    if grep -q 'classes2.dex' $i; then
-        echo "[*] Disassembling $i/classes2.dex"
-        baksmali deodex --code-offsets --use-locals --sequential-labels --bootclasspath $BOOT_OAT $i/classes2.dex
-    fi
-done
 
-echo "[*] Moving Smali to $REFLIB_PATH"
-mv out/* $REFLIB_PATH
-rm -r out/
+def run(command):
+    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if result.returncode:
+        detail = result.stderr.decode("utf-8", errors="replace").strip()
+        raise ExtractionError(f"{command[0]} failed ({result.returncode}): {detail}")
+    return result.stdout
 
-# Ooo, get you some directory file counts, ooo!
-# for x in `find . -maxdepth 1 -type d | sort`; do y=`find $x | wc -l`; echo $x,$y; done
 
-echo "[*] Fix Google maps packaging conflict"
-cd $REFLIB_PATH
-if [ -d "android_maps_conflict_avoidance" ]; then
-    cp -r android_maps_conflict_avoidance/* .
-    rm -R android_maps_conflict_avoidance/
-    find . -type f -print0 | xargs -0 sed -i '' 's/Landroid_maps_conflict_avoidance\/com\/google/Lcom\/google/g'
-fi
+class Device:
+    def __init__(self, container=None, serial=None):
+        self.container = container
+        self.prefix = ["docker", "exec", container] if container else []
+        self.adb = self.prefix + ["adb"] + (["-s", serial] if serial else ["-e"])
 
-echo "[*] Finished"
+    def shell(self, command):
+        return run(self.adb + ["shell", command]).decode("utf-8").strip()
+
+    def copy(self, source, destination):
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with destination.open("wb") as stream:
+            # Non-PTY shell preserves binary bytes and exit status; exec-out loses remote failures.
+            result = subprocess.run(
+                self.adb + ["shell", "-T", "cat " + shlex.quote(source)],
+                stdout=stream, stderr=subprocess.PIPE,
+            )
+        if result.returncode:
+            detail = result.stderr.decode("utf-8", errors="replace").strip()
+            raise ExtractionError(f"cannot read device file {source}: {detail}")
+
+    def prop(self, name):
+        return self.shell("getprop " + shlex.quote(name))
+
+
+def dex_entries(names):
+    """Require the complete, canonical multidex sequence, never silently truncate."""
+    entries = []
+    for name in names:
+        if not name.endswith(".dex"):
+            continue
+        match = re.fullmatch(r"classes(?:([2-9]|[1-9][0-9]+))?\.dex", name)
+        if not match:
+            raise ExtractionError(f"unsupported DEX archive entry: {name}")
+        entries.append((int(match.group(1) or "1"), name))
+    entries.sort()
+    if not entries or [number for number, _ in entries] != list(range(1, len(entries) + 1)):
+        raise ExtractionError("boot JAR must contain classes.dex and contiguous, unique classes2.dex, classes3.dex, ...")
+    return [name for _, name in entries]
+
+
+def dex_classes(path, launcher):
+    """Use baksmali's DEX reader; check completeness against the classic DEX header."""
+    with path.open("rb") as stream:
+        header = stream.read(112)
+    if header[:8] not in (b"dex\n035\0", b"dex\n037\0", b"dex\n038\0", b"dex\n039\0", b"dex\n040\0"):
+        raise ExtractionError(f"unsupported DEX format {header[:8]!r}; classic DEX 035/037–040 required (no compact DEX, OAT or DEX 041 containers)")
+    if len(header) != 112:
+        raise ExtractionError("truncated DEX header")
+    expected_count = struct.unpack_from("<I", header, 96)[0]
+    listed = run([str(launcher), "list", "classes", str(path)]).decode("utf-8").splitlines()
+    descriptors = set(listed)
+    if len(listed) != expected_count or len(descriptors) != expected_count:
+        raise ExtractionError("incomplete or duplicate DEX class listing")
+    for descriptor in descriptors:
+        class_path(descriptor)
+    return descriptors
+
+
+def class_path(descriptor):
+    if not descriptor.startswith("L") or not descriptor.endswith(";"):
+        raise ExtractionError(f"invalid class descriptor: {descriptor!r}")
+    name = descriptor[1:-1]
+    if any(part in ("", ".", "..") for part in name.split("/")) or any(
+        character.isspace() or character in "\0\\:;" for character in name
+    ):
+        raise ExtractionError(f"unsafe or unsupported class descriptor: {descriptor!r}")
+    return Path(name + ".smali")
+
+
+def disassembled_classes(directory, expected):
+    found = {}
+    for path in sorted(directory.rglob("*.smali")):
+        matches = re.findall(r"^\.class[ \t]+[^\r\n]*?(L[^\s]+;)[ \t]*$", path.read_text(encoding="utf-8"), re.MULTILINE)
+        if len(matches) != 1 or matches[0] in found:
+            raise ExtractionError(f"invalid or duplicate .class directive in {path.name}")
+        found[matches[0]] = path
+    missing, extra = expected - found.keys(), found.keys() - expected
+    if missing or extra:
+        raise ExtractionError(f"incomplete disassembly: missing {sorted(missing)!r}; unexpected {sorted(extra)!r}")
+    return found
+
+
+def merge_classes(found, destination, dex, dex_hash, winners, classes, shadowed):
+    for descriptor, path in sorted(found.items()):
+        if descriptor in winners:
+            winner_dex, winner_hash = winners[descriptor]
+            shadowed.append((descriptor, dex, dex_hash, winner_dex, winner_hash))
+            continue
+        relative = Path("smali") / class_path(descriptor)
+        target = destination / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if target.exists():
+            raise ExtractionError(f"class filename collision: {descriptor}")
+        digest = sha256(path)
+        path.rename(target)
+        winners[descriptor] = (dex, dex_hash)
+        classes.append((descriptor, relative.as_posix(), dex, dex_hash, digest))
+
+
+def executable_identity(command, version):
+    path = shutil.which(command)
+    if path is None:
+        raise ExtractionError(f"required executable not found: {command}")
+    return {"name": Path(path).name, "version": version, "sha256": sha256(Path(path))}
+
+
+def tool_metadata(launcher, device):
+    if not launcher.is_file() or not os.access(launcher, os.X_OK):
+        raise ExtractionError("baksmali launcher is missing or not executable; run ./gradlew installDist or supply --baksmali")
+    library = launcher.parent.parent / "lib"
+    jars = sorted(library.glob("*.jar"))
+    baksmali_jars = [path for path in jars if path.name.startswith("smali-baksmali-")]
+    if launcher.parent.name != "bin" or len(baksmali_jars) != 1:
+        raise ExtractionError("--baksmali requires a standalone Gradle installDist bin launcher with its sibling lib/smali-baksmali-*.jar; opaque custom launcher artifact identity is unsupported")
+    launcher_text = launcher.read_text(encoding="utf-8")
+    if "com.android.tools.smali.baksmali.Main" not in launcher_text or "$APP_HOME/lib/" not in launcher_text:
+        raise ExtractionError("--baksmali must be the standard standalone Gradle application launcher, not a custom wrapper")
+    version_output = run([str(launcher), "--version"]).decode("utf-8")
+    version_match = re.search(r"^baksmali ([^\s]+)", version_output, re.MULTILINE)
+    if version_match is None:
+        raise ExtractionError("cannot identify baksmali version")
+    version = version_match.group(1)
+    adb_lines = run(device.prefix + ["adb", "version"]).decode("utf-8").splitlines()
+    adb_version = "\n".join(line for line in adb_lines if line.startswith(("Android Debug Bridge version ", "Version ")))
+    if not adb_version:
+        raise ExtractionError("cannot identify adb version")
+    if device.container:
+        adb_path = run(device.prefix + ["sh", "-c", "command -v adb"]).decode("utf-8").strip()
+        adb_data = run(device.prefix + ["cat", adb_path])
+        adb = {"name": Path(adb_path).name, "version": adb_version, "sha256": hashlib.sha256(adb_data).hexdigest()}
+    else:
+        adb = executable_identity("adb", adb_version)
+    java = str(Path(os.environ["JAVA_HOME"]) / "bin/java") if os.environ.get("JAVA_HOME") else "java"
+    java_result = subprocess.run([java, "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+    java_version = re.search(r'^(?:openjdk|java) version "([^"]+)"',
+                             (java_result.stdout + java_result.stderr).decode("utf-8"), re.MULTILINE)
+    if java_version is None:
+        raise ExtractionError("cannot identify Java version")
+    metadata = {
+        "baksmali": {
+            "version": version,
+            "launcher": {"name": launcher.name, "sha256": sha256(launcher)},
+            "artifacts": [{"name": path.name, "sha256": sha256(path)} for path in jars],
+        },
+        "adb": adb,
+        "java": executable_identity(java, java_version.group(1)),
+        "python": {"version": sys.version.split()[0], "sha256": sha256(Path(sys.executable))},
+        "generator": {"name": Path(__file__).name, "sha256": sha256(Path(__file__))},
+    }
+    if device.container:
+        metadata["docker"] = executable_identity("docker", run(["docker", "--version"]).decode("utf-8").strip())
+    return metadata
+
+
+def image_metadata(device):
+    metadata = {"status": "unavailable", "reason": "local adb does not expose host emulator image identity"}
+    if device.container:
+        image_id = json.loads(run(["docker", "inspect", "--format", "{{json .Image}}", device.container]))
+        image = json.loads(run(["docker", "image", "inspect", image_id]))[0]
+        metadata = {
+            "status": "available",
+            "docker": {"id": image["Id"], "repo_digests": sorted(image.get("RepoDigests") or []),
+                       "architecture": image["Architecture"], "os": image["Os"]},
+        }
+        manifest = run(device.prefix + ["sh", "-c",
+            "if [ -e /opt/sdk-manifest.txt ]; then cat /opt/sdk-manifest.txt; "
+            "else printf '__FRAMEWORK_SDK_MANIFEST_MISSING__'; fi"])
+        if manifest == b"__FRAMEWORK_SDK_MANIFEST_MISSING__":
+            metadata["sdk_manifest"] = {"status": "missing", "source": "/opt/sdk-manifest.txt"}
+        else:
+            metadata["sdk_manifest"] = {
+                "status": "available", "source": "/opt/sdk-manifest.txt",
+                "sha256": hashlib.sha256(manifest).hexdigest(),
+                "system_images": sorted(line.strip() for line in manifest.decode("utf-8").splitlines()
+                                        if line.strip().startswith("system-images;")),
+            }
+    return metadata
+
+
+def collect_notices(device, bootclasspath, stage):
+    roots = {"/system", "/system_ext", "/product", "/vendor", "/odm"}
+    for jar in bootclasspath:
+        parts = jar.split("/")
+        if len(parts) > 3 and parts[1] == "apex":
+            roots.add("/apex/" + parts[2])
+    metadata = {"files": [], "searches": [], "missing_is_not_a_license_grant": True}
+    copied = set()
+    for root in sorted(roots):
+        quoted = shlex.quote(root)
+        result = device.shell(
+            f"if [ -e {quoted} ]; then find {quoted}/ \\( -type f -o -type l \\) -iname '*notice*'; "
+            "else printf '__FRAMEWORK_NOTICE_ROOT_MISSING__'; fi"
+        )
+        if result == "__FRAMEWORK_NOTICE_ROOT_MISSING__":
+            metadata["searches"].append({"root": root, "status": "missing_root", "count": 0})
+            continue
+        sources = sorted(set(result.splitlines())) if result else []
+        metadata["searches"].append({"root": root, "status": "found" if sources else "no_notice_files", "count": len(sources)})
+        for source in sources:
+            # find may print a double slash for the explicitly traversed root.
+            source = "/" + "/".join(part for part in source.split("/") if part)
+            if not source.startswith(root + "/") or any(part == ".." for part in source.split("/")):
+                raise ExtractionError(f"unexpected notice path: {source!r}")
+            if source in copied:
+                continue
+            relative = Path("notices") / source.lstrip("/")
+            device.copy(source, stage / relative)
+            metadata["files"].append({"source": source, "path": relative.as_posix(), "sha256": sha256(stage / relative)})
+            copied.add(source)
+    metadata["files"].sort(key=lambda item: item["source"])
+    return metadata
+
+
+def write_tsv(path, columns, rows):
+    with path.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write("# " + "\t".join(columns) + "\n")
+        for row in rows:
+            if any("\t" in value or "\n" in value or "\r" in value for value in row):
+                raise ExtractionError("unsupported tab or newline in manifest value")
+            stream.write("\t".join(row) + "\n")
+
+
+def publish_output(output, populate):
+    """Stage on the destination filesystem; failed extraction never publishes output."""
+    if os.path.lexists(output):
+        raise ExtractionError(f"output already exists; refusing to overwrite: {output}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    stage = Path(tempfile.mkdtemp(prefix=".framework-stage-", dir=output.parent))
+    try:
+        populate(stage)
+        if os.path.lexists(output):
+            raise ExtractionError(f"output appeared during extraction; refusing to overwrite: {output}")
+        stage.rename(output)
+    finally:
+        if stage.exists():
+            shutil.rmtree(stage)
+
+
+def extract(device, launcher, stage, provenance):
+    for directory in ("smali", "jars", "dex", "notices"):
+        (stage / directory).mkdir()
+    boot_rows, class_rows, shadow_rows, winners = [], [], [], {}
+    for index, jar in enumerate(provenance["bootclasspath"]):
+        order = f"{index:02d}"
+        stem = Path(jar).stem
+        jar_path = stage / "jars" / f"{order}-{stem}.jar"
+        device.copy(jar, jar_path)
+        jar_hash = sha256(jar_path)
+        try:
+            with zipfile.ZipFile(jar_path) as archive:
+                entries = dex_entries(archive.namelist())
+                for entry in entries:
+                    relative = Path("dex") / f"{order}-{stem}" / entry
+                    path = stage / relative
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    with archive.open(entry) as source, path.open("wb") as destination:
+                        shutil.copyfileobj(source, destination)
+                    expected = dex_classes(path, launcher)
+                    dex_hash = sha256(path)
+                    dex_name = relative.as_posix()
+                    boot_rows.append((order, jar, jar_hash, dex_name, dex_hash))
+                    with tempfile.TemporaryDirectory(prefix=".disassembly-", dir=stage) as temporary:
+                        disassembly = Path(temporary)
+                        # Android API identifies the image; the DEX header selects its opcode table.
+                        run([str(launcher), "disassemble", "--jobs", "1",
+                             "--output", str(disassembly), str(path)])
+                        found = disassembled_classes(disassembly, expected)
+                        merge_classes(found, stage, dex_name, dex_hash, winners, class_rows, shadow_rows)
+        except (zipfile.BadZipFile, NotImplementedError, RuntimeError) as error:
+            raise ExtractionError(f"unsupported or corrupt boot JAR {jar}: {error}") from error
+    provenance["notices"] = collect_notices(device, provenance["bootclasspath"], stage)
+    write_tsv(stage / "boot-dex.tsv", ("jar_order", "jar", "jar_sha256", "dex", "dex_sha256"), boot_rows)
+    write_tsv(stage / "classes.tsv", ("descriptor", "smali", "dex", "dex_sha256", "smali_sha256"), class_rows)
+    write_tsv(stage / "shadowed-classes.tsv", ("descriptor", "dex", "dex_sha256", "winner_dex", "winner_dex_sha256"), shadow_rows)
+    (stage / "provenance.json").write_text(json.dumps(provenance, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--container", help="run adb inside this Docker container")
+    parser.add_argument("--serial", help="adb device serial (default: adb -e)")
+    parser.add_argument("--output", type=Path, help="new output directory (default: generated/android-<device API>)")
+    parser.add_argument("--baksmali", type=Path,
+                        default=Path(__file__).resolve().parent / "build/install/framework-tools/bin/framework-tools",
+                        help="standalone installDist launcher")
+    args = parser.parse_args()
+    try:
+        if args.output is not None and os.path.lexists(args.output):
+            raise ExtractionError(f"output already exists; refusing to overwrite: {args.output}")
+        device = Device(args.container, args.serial)
+        if device.prop("sys.boot_completed") != "1":
+            raise ExtractionError("device must be fully booted (sys.boot_completed=1)")
+        api = device.prop("ro.build.version.sdk")
+        if not re.fullmatch(r"[0-9]+", api):
+            raise ExtractionError(f"invalid Android API: {api!r}")
+        output = args.output or Path(__file__).resolve().parent / "generated" / f"android-{api}"
+        if os.path.lexists(output):
+            raise ExtractionError(f"output already exists; refusing to overwrite: {output}")
+        bootclasspath = device.shell('printf "%s" "$BOOTCLASSPATH"').split(":")
+        if not bootclasspath or any(
+            not path.startswith("/") or not path.endswith(".jar") or
+            any(character.isspace() for character in path) or
+            any(part in ("", ".", "..") for part in path[1:].split("/"))
+            for path in bootclasspath
+        ):
+            raise ExtractionError(f"unsupported or empty BOOTCLASSPATH: {bootclasspath!r}")
+        launcher = args.baksmali.resolve()
+        provenance = {
+            "format": 1, "android_api": int(api),
+            "build_fingerprint": device.prop("ro.build.fingerprint"),
+            "build_id": device.prop("ro.build.id"),
+            "security_patch": device.prop("ro.build.version.security_patch"),
+            "abi": device.prop("ro.product.cpu.abi"),
+            "abi_list": device.prop("ro.product.cpu.abilist").split(","),
+            "bootclasspath": bootclasspath,
+            "tools": tool_metadata(launcher, device),
+            "source_image": image_metadata(device),
+        }
+        publish_output(output, lambda stage: extract(device, launcher, stage, provenance))
+        print(f"Extracted API {api}: {len(bootclasspath)} boot JARs -> {output}")
+        return 0
+    except (ExtractionError, OSError, UnicodeError, ValueError, subprocess.SubprocessError) as error:
+        print(f"make_reflib: {error}", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

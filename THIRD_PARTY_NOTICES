@@ -1,0 +1,62 @@
+AndroidFrameworkSmali — third-party materials and provenance
+===========================================================
+
+Scope of the project license
+----------------------------
+LICENSE supplies Apache License 2.0 for project-owned extraction tooling,
+build configuration, and documentation. It does not apply a new license to
+Android framework data, dependency JARs, emulator images, or upstream notices.
+No blanket Apache-2.0 license is asserted for those third-party materials.
+
+Gradle wrapper
+--------------
+The Gradle wrapper launchers and gradle/wrapper/gradle-wrapper.jar are upstream
+Gradle tooling, distributed under Apache License 2.0. The launchers retain
+their upstream copyright/license headers; the wrapper JAR retains its original
+META-INF/LICENSE. The pinned distribution is Gradle 9.7.0. The Gradle
+distribution downloaded by the wrapper contains its own third-party materials
+and legal notices; those are separate from the project-owned generator.
+Upstream: https://github.com/gradle/gradle
+
+Baksmali and runtime dependencies
+--------------------------------
+The build resolves com.android.tools.smali:smali-baksmali:3.0.10 from Google
+Maven, together with its runtime dependencies. Baksmali's upstream composite
+LICENSE contains BSD-3-Clause and Apache-2.0 terms. Its license is not a
+statement about every transitive dependency or any input it disassembles.
+Upstream: https://github.com/google/smali
+Artifact metadata:
+https://dl.google.com/dl/android/maven2/com/android/tools/smali/smali-baksmali/3.0.10/smali-baksmali-3.0.10.pom
+
+installDist retains the original dependency JARs separately in
+build/install/framework-tools/lib/. Embedded LICENSE, NOTICE, and other legal
+entries are not merged or discarded by a fat-JAR step. Consult the actual
+resolved artifacts and their upstream metadata for their respective terms.
+Preserving JAR entries does not guarantee that every required notice is
+embedded in a JAR or discharge other distribution obligations. Build products
+and downloaded dependencies are not tracked in this repository.
+
+Existing android-25 corpus
+--------------------------
+The existing android-25/ tree is retained without removing packages or
+rewriting its contents. Its original image identity, package revision,
+extraction inputs, and complete attribution record are not recorded here.
+Neither the new generator nor the project LICENSE repairs that provenance
+gap or grants new rights to this corpus. Android and third-party components
+remain governed by their original terms. Review the relevant upstream
+component sources and notices before redistribution.
+
+Newly generated output
+----------------------
+The extractor records the running device's build properties and ordered boot
+classpath, original JAR and DEX hashes, class selection, available image
+metadata, and original accessible system/APEX notices. Missing notices and
+metadata are identified rather than replaced with an assumed license. Read
+or permission failures are errors, not evidence that no notice exists.
+
+The notice inventory may cover components beyond the extracted boot classpath;
+it is not a complete component-to-source inventory. Keep applicable original
+licenses, notices and source-availability obligations with redistributed
+components. The project license does not supply rights to the whole SDK or
+emulator image. Generated artifacts are local, ignored build data and are not
+implicitly selected by Simplify.
